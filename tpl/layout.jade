@@ -1,0 +1,43 @@
+!!!
+
+html
+  head
+    title the city-picker
+
+    link(id='css', rel='stylesheet',href='css/main.css',type='text/css',media='all')
+    script(type='text/javascript',src='jst/lib/jquery-2.0.2.min.js')
+    script(type='text/javascript',src='jst/main.js')
+
+  body
+    .container
+      block content
+
+    #fb-root
+    script
+      window.fbAsyncInit = function() {
+
+        FB.init({
+          appId      : '#{_c.FB_APPID}',
+          cookie     : true,
+          xfbml      : true,
+          oauth      : true
+        });
+
+        FB.Canvas.setAutoGrow();
+        _.sr = '#{_p.signed_request}';
+        _.url = '#{_c.FB_URL}';
+        _.g_url = '#{_c.G_URL}';
+        _.i();
+
+        if (_.sr == '' && _.mobile == false) {
+          location.href = '#{_c.FB_URL}';
+        }
+
+      };
+
+      (function(d){
+         var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+         js = d.createElement('script'); js.id = id; js.async = true;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         d.getElementsByTagName('head')[0].appendChild(js);
+       }(document));
