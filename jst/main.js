@@ -1,10 +1,30 @@
 var _ = {
 
-  i: function() {
+  rotateNum: 1,
+  rotateInterval: false,
 
+  i: function() {
+    _.handlers();
+    rotate.i();
   },
 
   handlers: function() {
+    $('.bubble').click(_.bubble);
+    $('.checkbox').click(function() { $(this).toggleClass('checked'); });
+  },
+
+  bubble: function() {
+
+    var action = $(this).data('action');
+
+    switch (action) {
+
+      case 'register' :
+        $('.bubbles').addClass('hidden');
+        register.i();
+        break;
+
+    }
 
   },
 

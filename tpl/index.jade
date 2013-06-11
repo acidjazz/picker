@@ -1,14 +1,21 @@
 
 extends layout
 block content
-  .header
-    .nzo
-    .sfo SFO
-  .clear
-  .body
-    .bubble 
-      .copy play now
-    .bubble
-      .copy register to win
-        .smaller 2 free tickets to auckland
+  include _header
 
+  .body
+    include _images
+    .titles
+      .copy1 Test your Kiwi IQ with
+      .copy2 the city-picker
+      .copy3 Let's play aa game.  Tell us if each photo is Auckland or San Francisco
+        | <br/> and we'll teach you a thing or two.  Careful, they look a lot alike.
+    .bubbles
+      .bubble.bubbleLeft(data-action='play')
+        .copy play now
+      .bubble.bubbleRight(data-action='register')
+        .copy register to win
+          .smaller 2 free tickets to auckland
+      .clear
+  include _footer
+  include _register

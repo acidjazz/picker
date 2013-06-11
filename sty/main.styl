@@ -1,6 +1,9 @@
 
+@import _vars
 @import _fonts
 @import 'nib'
+@import _header
+@import _register
 
 body,html
   margin 0
@@ -9,44 +12,108 @@ body,html
   font-size 16px
   color #fff
   background-color #000
+  position relative
 
 .clear
   clearfix()
 
 .container
+  position relative
   width 810px
   margin auto
   padding 0
-
-.header
-  .nzo
-    float right
-    background-image url('/img/anz_logo.png')
-    width 246px
-    height 40px
-  .sfo
-    float left
-    background-color #fff
-    color #000
-    width 100px
-    height 50px
-    text-align center
-    font-size 3em
-
 .body
-  background-image url('http://fpoimg.com/800x800?bg_color=BFC5FF&text_color=4A59FF&text=SFO or AUCK');
-  background-size cover
-  height 800px
-
-  .bubble
-    float left
-    width 300px
-    height 300px
-    background-color rgba(0, 0, 0, 0.5)
-    border-radius 50%
-    color #fff
-    .copy
+  background-color #000
+  padding 60px 0 0 0
+  height 791px
+  .titles
+    position relative
+    z-index 10
+    padding 0 0 0 40px
+    .copy1, .copy3
+      font-family ApexNewLight
+    .copy2
       font-size 3em
-      text-align center
-      .smaller
-        font-size 0.5em
+    .copy3
+      padding 10px 0 0 0
+  .bubbles.hidden
+    transform scale(0)
+    transition all 0.2s
+  .bubbles
+    position relative
+    z-index 10
+    margin 80px auto 0 auto
+    width 640px
+    transition all 0.2s
+    .bubbleLeft
+      animation fromLeft 0.5s 1.25s ease both
+    .bubbleRight
+      animation fromRight 0.5s 2.5s ease both
+    .bubble
+      float left
+      cursor pointer
+      width 300px
+      height 300px
+      margin 0 10px
+      background-color rgba(0, 0, 0, 0.65)
+      border-radius 50%
+      color #fff
+      transition all 0.2s
+      &:hover
+        background-color rgba(blue1, 0.65)
+      &:hover .copy
+        transition all 0.2s
+      .copy
+        font-size 2.5em
+        text-align center
+        margin 120px 0 0 0
+        .smaller
+          font-family ApexNewLight
+          font-size 0.5em
+
+.footer
+  text-align center
+  .copy1
+    font-family ApexNewLight
+    font-size 1.2em
+    line-height 1.3em
+  .copy2
+    font-family ApexNewLight
+    padding 20px 20px 0 20px
+    font-size 0.9em
+    line-height 1em
+
+.images
+  position absolute
+  z-index 1
+  .image
+    position absolute
+    width 810px
+    height 791px
+    background-size cover
+    transition opacity 2s
+    opacity 0
+    &.show
+      opacity 1
+      transition opacity 2s
+    for image, i in images
+      &.image{i}
+        background-image url(/img/game/(image));
+  .gradient
+    position absolute
+    top 0px
+    left 0px
+    width 810px
+    height 791px
+    background linear-gradient(top, rgba(0,0,0,1) 0%, transparent 20%, transparent 80%, rgba(0,0,0,1) 100%)
+    box-shadow inset 0px 0px 100px 10px rgba(0, 0, 0, 0.8)
+
+@keyframes fromLeft
+  from
+    transform translateX(-25rem) rotate(180deg)
+    opacity 0
+
+@keyframes fromRight
+  from
+    transform translateX(25rem) rotate(-180deg)
+    opacity 0

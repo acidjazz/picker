@@ -26,6 +26,148 @@
   font-weight: normal;
   font-style: normal;
 }
+.header .nzo {
+  float: right;
+  background-image: url("/img/anz_logo.png");
+  width: 246px;
+  height: 40px;
+  margin: 10px 10px 0 0;
+}
+.header .sfo {
+  float: left;
+  background-image: url("/img/sfo.png");
+  width: 97px;
+  height: 52px;
+  margin: 0 0 0 10px;
+}
+.register {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  width: 790px;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  z-index: 10;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  background-color: rgba(0,0,0,0.9);
+  padding: 50px 0 100px 0;
+  overflow: hidden;
+  -webkit-transition: opacity 0.5s ease-in-out 0.5s;
+  -moz-transition: opacity 0.5s ease-in-out 0.5s;
+  -o-transition: opacity 0.5s ease-in-out 0.5s;
+  -ms-transition: opacity 0.5s ease-in-out 0.5s;
+  transition: opacity 0.5s ease-in-out 0.5s;
+}
+.register.hidden {
+  height: 1px;
+  padding: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  -webkit-transition: opacity 0.5s ease-in-out 0.5s;
+  -moz-transition: opacity 0.5s ease-in-out 0.5s;
+  -o-transition: opacity 0.5s ease-in-out 0.5s;
+  -ms-transition: opacity 0.5s ease-in-out 0.5s;
+  transition: opacity 0.5s ease-in-out 0.5s;
+}
+.register > .title {
+  margin: 100px 0 0 0;
+  text-align: center;
+  font-size: 3em;
+}
+.register > .copy {
+  padding: 20px 120px;
+  font-family: ApexNewLight;
+  text-align: center;
+  font-size: 1em;
+  line-height: 1.1em;
+}
+.register > .form > .right {
+  float: right;
+  width: 395px;
+}
+.register > .form .option {
+  padding: 10px 0 0 0;
+}
+.register > .form .checkbox {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  -webkit-box-shadow: inset 2px 2px 5px 1px rgba(0,0,0,0.7);
+  box-shadow: inset 2px 2px 5px 1px rgba(0,0,0,0.7);
+  margin: 0 0 0 10px;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.register > .form .checkbox.checked {
+  background-color: #009ec1;
+  -webkit-box-shadow: 0 0 5px 0 #009ec1;
+  box-shadow: 0 0 5px 0 #009ec1;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.register > .form .label {
+  font-family: ApexNewMedium;
+  font-size: 1.3em;
+  padding: 10px;
+}
+.register > .form .copy {
+  float: right;
+  font-family: ApexNewLight;
+  font-size: 1em;
+  margin: 0 0 0 40px;
+}
+.register > .left {
+  float: left;
+  width: 395px;
+  border: 1px solid #f00;
+  padding: 0 0 20px 0;
+}
+.register .input {
+  background-color: #fff;
+  width: 340px;
+  padding: 5px 10px;
+  margin: 0 0 0 10px;
+  -webkit-box-shadow: inset 2px 2px 5px 1px rgba(0,0,0,0.7);
+  box-shadow: inset 2px 2px 5px 1px rgba(0,0,0,0.7);
+}
+.register .input input {
+  outline: none;
+  font-family: ApexNewLight;
+  font-size: 1.2em;
+  border: none;
+  width: 320px;
+}
+.register > .submit {
+  font-size: 3em;
+  margin: 20px 0 0 20px;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.register > .submit:hover {
+  color: #009ec1;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  transition: color 0.2s;
+}
 body,
 html {
   margin: 0;
@@ -34,6 +176,7 @@ html {
   font-size: 16px;
   color: #fff;
   background-color: #000;
+  position: relative;
 }
 .clear {
   zoom: 1;
@@ -47,45 +190,297 @@ html {
   clear: both;
 }
 .container {
+  position: relative;
   width: 810px;
   margin: auto;
   padding: 0;
 }
-.header .nzo {
-  float: right;
-  background-image: url("/img/anz_logo.png");
-  width: 246px;
-  height: 40px;
+.body {
+  background-color: #000;
+  padding: 60px 0 0 0;
+  height: 791px;
 }
-.header .sfo {
-  float: left;
-  background-color: #fff;
-  color: #000;
-  width: 100px;
-  height: 50px;
-  text-align: center;
+.body .titles {
+  position: relative;
+  z-index: 10;
+  padding: 0 0 0 40px;
+}
+.body .titles .copy1,
+.body .titles .copy3 {
+  font-family: ApexNewLight;
+}
+.body .titles .copy2 {
   font-size: 3em;
 }
-.body {
-  background-image: url("http://fpoimg.com/800x800?bg_color=BFC5FF&text_color=4A59FF&text=SFO or AUCK");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  height: 800px;
+.body .titles .copy3 {
+  padding: 10px 0 0 0;
 }
-.body .bubble {
+.body .bubbles.hidden {
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -o-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.body .bubbles {
+  position: relative;
+  z-index: 10;
+  margin: 80px auto 0 auto;
+  width: 640px;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.body .bubbles .bubbleLeft {
+  -webkit-animation: fromLeft 0.5s 1.25s ease both;
+  -moz-animation: fromLeft 0.5s 1.25s ease both;
+  -o-animation: fromLeft 0.5s 1.25s ease both;
+  -ms-animation: fromLeft 0.5s 1.25s ease both;
+  animation: fromLeft 0.5s 1.25s ease both;
+}
+.body .bubbles .bubbleRight {
+  -webkit-animation: fromRight 0.5s 2.5s ease both;
+  -moz-animation: fromRight 0.5s 2.5s ease both;
+  -o-animation: fromRight 0.5s 2.5s ease both;
+  -ms-animation: fromRight 0.5s 2.5s ease both;
+  animation: fromRight 0.5s 2.5s ease both;
+}
+.body .bubbles .bubble {
   float: left;
+  cursor: pointer;
   width: 300px;
   height: 300px;
-  background-color: rgba(0,0,0,0.5);
+  margin: 0 10px;
+  background-color: rgba(0,0,0,0.65);
   -webkit-border-radius: 50%;
   border-radius: 50%;
   color: #fff;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
 }
-.body .bubble .copy {
-  font-size: 3em;
+.body .bubbles .bubble:hover {
+  background-color: rgba(0,158,193,0.65);
+}
+.body .bubbles .bubble:hover .copy {
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.body .bubbles .bubble .copy {
+  font-size: 2.5em;
+  text-align: center;
+  margin: 120px 0 0 0;
+}
+.body .bubbles .bubble .copy .smaller {
+  font-family: ApexNewLight;
+  font-size: 0.5em;
+}
+.footer {
   text-align: center;
 }
-.body .bubble .copy .smaller {
-  font-size: 0.5em;
+.footer .copy1 {
+  font-family: ApexNewLight;
+  font-size: 1.2em;
+  line-height: 1.3em;
+}
+.footer .copy2 {
+  font-family: ApexNewLight;
+  padding: 20px 20px 0 20px;
+  font-size: 0.9em;
+  line-height: 1em;
+}
+.images {
+  position: absolute;
+  z-index: 1;
+}
+.images .image {
+  position: absolute;
+  width: 810px;
+  height: 791px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -webkit-transition: opacity 2s;
+  -moz-transition: opacity 2s;
+  -o-transition: opacity 2s;
+  -ms-transition: opacity 2s;
+  transition: opacity 2s;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+.images .image.show {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  -webkit-transition: opacity 2s;
+  -moz-transition: opacity 2s;
+  -o-transition: opacity 2s;
+  -ms-transition: opacity 2s;
+  transition: opacity 2s;
+}
+.images .image.image0 {
+  background-image: url("/img/game/beachhouses.png");
+}
+.images .image.image1 {
+  background-image: url("/img/game/citycouple.png");
+}
+.images .image.image2 {
+  background-image: url("/img/game/paddleboard.png");
+}
+.images .image.image3 {
+  background-image: url("/img/game/skyfloor.png");
+}
+.images .image.image4 {
+  background-image: url("/img/game/trainstation.png");
+}
+.images .image.image5 {
+  background-image: url("/img/game/wineladies.png");
+}
+.images .gradient {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 810px;
+  height: 791px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000), color-stop(0.2, transparent), color-stop(0.8, transparent), color-stop(1, #000));
+  background: -webkit-linear-gradient(top, #000 0%, transparent 20%, transparent 80%, #000 100%);
+  background: -moz-linear-gradient(top, #000 0%, transparent 20%, transparent 80%, #000 100%);
+  background: -o-linear-gradient(top, #000 0%, transparent 20%, transparent 80%, #000 100%);
+  background: -ms-linear-gradient(top, #000 0%, transparent 20%, transparent 80%, #000 100%);
+  background: linear-gradient(top, #000 0%, transparent 20%, transparent 80%, #000 100%);
+  -webkit-box-shadow: inset 0px 0px 100px 10px rgba(0,0,0,0.8);
+  box-shadow: inset 0px 0px 100px 10px rgba(0,0,0,0.8);
+}
+@-moz-keyframes fromLeft {
+  0% {
+    -webkit-transform: translateX(-25rem) rotate(180deg);
+    -moz-transform: translateX(-25rem) rotate(180deg);
+    -o-transform: translateX(-25rem) rotate(180deg);
+    -ms-transform: translateX(-25rem) rotate(180deg);
+    transform: translateX(-25rem) rotate(180deg);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+}
+@-webkit-keyframes fromLeft {
+  0% {
+    -webkit-transform: translateX(-25rem) rotate(180deg);
+    -moz-transform: translateX(-25rem) rotate(180deg);
+    -o-transform: translateX(-25rem) rotate(180deg);
+    -ms-transform: translateX(-25rem) rotate(180deg);
+    transform: translateX(-25rem) rotate(180deg);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+}
+@-o-keyframes fromLeft {
+  0% {
+    -webkit-transform: translateX(-25rem) rotate(180deg);
+    -moz-transform: translateX(-25rem) rotate(180deg);
+    -o-transform: translateX(-25rem) rotate(180deg);
+    -ms-transform: translateX(-25rem) rotate(180deg);
+    transform: translateX(-25rem) rotate(180deg);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+}
+@-ms-keyframes fromLeft {
+  0% {
+    -webkit-transform: translateX(-25rem) rotate(180deg);
+    -moz-transform: translateX(-25rem) rotate(180deg);
+    -o-transform: translateX(-25rem) rotate(180deg);
+    -ms-transform: translateX(-25rem) rotate(180deg);
+    transform: translateX(-25rem) rotate(180deg);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+}
+@keyframes fromLeft {
+  0% {
+    -webkit-transform: translateX(-25rem) rotate(180deg);
+    -moz-transform: translateX(-25rem) rotate(180deg);
+    -o-transform: translateX(-25rem) rotate(180deg);
+    -ms-transform: translateX(-25rem) rotate(180deg);
+    transform: translateX(-25rem) rotate(180deg);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+}
+@-moz-keyframes fromRight {
+  0% {
+    -webkit-transform: translateX(25rem) rotate(-180deg);
+    -moz-transform: translateX(25rem) rotate(-180deg);
+    -o-transform: translateX(25rem) rotate(-180deg);
+    -ms-transform: translateX(25rem) rotate(-180deg);
+    transform: translateX(25rem) rotate(-180deg);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+}
+@-webkit-keyframes fromRight {
+  0% {
+    -webkit-transform: translateX(25rem) rotate(-180deg);
+    -moz-transform: translateX(25rem) rotate(-180deg);
+    -o-transform: translateX(25rem) rotate(-180deg);
+    -ms-transform: translateX(25rem) rotate(-180deg);
+    transform: translateX(25rem) rotate(-180deg);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+}
+@-o-keyframes fromRight {
+  0% {
+    -webkit-transform: translateX(25rem) rotate(-180deg);
+    -moz-transform: translateX(25rem) rotate(-180deg);
+    -o-transform: translateX(25rem) rotate(-180deg);
+    -ms-transform: translateX(25rem) rotate(-180deg);
+    transform: translateX(25rem) rotate(-180deg);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+}
+@-ms-keyframes fromRight {
+  0% {
+    -webkit-transform: translateX(25rem) rotate(-180deg);
+    -moz-transform: translateX(25rem) rotate(-180deg);
+    -o-transform: translateX(25rem) rotate(-180deg);
+    -ms-transform: translateX(25rem) rotate(-180deg);
+    transform: translateX(25rem) rotate(-180deg);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+}
+@keyframes fromRight {
+  0% {
+    -webkit-transform: translateX(25rem) rotate(-180deg);
+    -moz-transform: translateX(25rem) rotate(-180deg);
+    -o-transform: translateX(25rem) rotate(-180deg);
+    -ms-transform: translateX(25rem) rotate(-180deg);
+    transform: translateX(25rem) rotate(-180deg);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
 }
