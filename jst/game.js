@@ -3,9 +3,9 @@ var game = {
   images: [
     'beachcrowd.png',
     'beachhouses.png',
-    'boatwoman.png'
+    'boatwoman.png',
+    'coffee.png'
     /*
-    'coffee.png',
     'eyeball.png',
     'oceanwoman.png',
     'paddleboard.png',
@@ -26,7 +26,6 @@ var game = {
 
   i: function() {
 
-
   },
 
   load: function(complete) {
@@ -45,8 +44,7 @@ var game = {
         $('.loader .progress .inner').css({width: width + 'px'});
 
         if (loaded == len) {
-          console.log("we are complete");
-          complete();
+          setTimeout(function() { complete(); }, 200);
         }
 
       }

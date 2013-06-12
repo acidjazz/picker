@@ -256,6 +256,12 @@ html {
 .clear:after {
   clear: both;
 }
+.noselect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 .container {
   overflow: hidden;
   position: relative;
@@ -337,18 +343,18 @@ html {
   transition: all 0.2s;
 }
 .body .bubbles .bubbleLeft {
-  -webkit-animation: fromLeft 0.5s 0.25s ease both;
-  -moz-animation: fromLeft 0.5s 0.25s ease both;
-  -o-animation: fromLeft 0.5s 0.25s ease both;
-  -ms-animation: fromLeft 0.5s 0.25s ease both;
-  animation: fromLeft 0.5s 0.25s ease both;
+  -webkit-animation: fromLeft 0.5s 1.25s ease both;
+  -moz-animation: fromLeft 0.5s 1.25s ease both;
+  -o-animation: fromLeft 0.5s 1.25s ease both;
+  -ms-animation: fromLeft 0.5s 1.25s ease both;
+  animation: fromLeft 0.5s 1.25s ease both;
 }
 .body .bubbles .bubbleRight {
-  -webkit-animation: fromRight 0.5s 0.5s ease both;
-  -moz-animation: fromRight 0.5s 0.5s ease both;
-  -o-animation: fromRight 0.5s 0.5s ease both;
-  -ms-animation: fromRight 0.5s 0.5s ease both;
-  animation: fromRight 0.5s 0.5s ease both;
+  -webkit-animation: fromRight 0.5s 1.5s ease both;
+  -moz-animation: fromRight 0.5s 1.5s ease both;
+  -o-animation: fromRight 0.5s 1.5s ease both;
+  -ms-animation: fromRight 0.5s 1.5s ease both;
+  animation: fromRight 0.5s 1.5s ease both;
 }
 .body .bubbles .bubble {
   float: left;

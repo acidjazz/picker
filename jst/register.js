@@ -9,7 +9,7 @@ var register = {
     $('.register').removeClass('hidden');
     setTimeout(function() { 
       register.handlers();
-      register.perms();
+      register.data();
     }, 500);
 
   },
@@ -20,19 +20,56 @@ var register = {
     $('.register .submit').click(register.submit);
   },
 
-  perms: function() {
+  data: function() {
 
-    FB.login(function(response) {
+    register.facebook.me(function(response) {
 
-      if (response.authResponse) {
-        FB.api('/me', function(response) {
-          register.user = response;
-          register.populate(response);
-        });
+      if (response) {
+        register.user = response;
+        register.populate(response);
       } else {
-        _.n.i('Please allow access as part of the reigstration process', true, register.perms);
+
+        register.facebook.perms(function(presponse) {
+
+          if (presponse) {
+            register.data();
+          } else {
+            _.n.i('Please allow access as part of the reigstration process', true, register.data);
+          }
+
+        });
       }
-    }, {scope: 'email'});
+
+    });
+
+  },
+
+  facebook: {
+
+    me: function (callback) {
+
+      FB.api('/me', function(response) {
+        if (response.error) {
+          callback(false);
+        } else {
+          callback(response);
+        }
+      });
+
+    },
+
+    perms: function(callback) {
+
+      FB.login(function(response) {
+
+        if (response.authResponse) {
+          callback(true);
+        } else {
+          callback(false);
+        }
+      }, {scope: 'email'});
+
+    }
 
   },
 
