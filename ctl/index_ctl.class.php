@@ -7,6 +7,7 @@ class index_ctl {
 
   public function index() {
 
+
     $fb = new fb();
     $admin = false;
 
@@ -39,6 +40,32 @@ class index_ctl {
     }
 
     jade::c('index', ['admin' => $this->admin, 'capable' => $this->capable, 'id' => $id]); 
+
+  }
+
+  public function register() {
+
+    define('KDEBUG_JSON', true);
+
+    if (!isset($_REQUEST['form']) || !isset($_REQUEST['user'])) {
+      echo json_encode(['error' => true, 'status' => 'error registering']);
+      return true;
+    }
+
+    $form = json_decode($_REQUEST['form'], true);
+    $facebook = json_decode($_REQUEST['user'], true);
+
+    $user = user::i(user::findOne(['id' => $facebook['id']]));
+
+    $user->id = $facebook['id'];
+    foreach ($form as $key=>$value) {
+      $user->$key = $value;
+    }
+    $user->facebook = $facebook;
+    $user->save();
+
+    echo json_encode(['success' => true, 'status' => 'registration successful']);
+    return true;
 
   }
 

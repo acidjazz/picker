@@ -1,11 +1,14 @@
 var _ = {
 
-  rotateNum: 1,
-  rotateInterval: false,
-
   i: function() {
-    _.handlers();
-    rotate.i();
+
+    game.load(function(response) {
+      _.handlers();
+      rotate.i();
+      $('.loader').hide();
+      $('.body').show();
+    });
+
   },
 
   handlers: function() {
@@ -40,6 +43,40 @@ var _ = {
       function (response) {
 
     });
+
+  },
+
+  n: {
+
+    callback: false,
+
+    i: function(copy, fade, callback) {
+
+      if (callback) {
+        _.n.callback = callback;
+      }
+
+      if (fade) {
+        $('.fade').addClass('on');
+      }
+
+      $('.notice').addClass('on');
+      $('.notice .cta').click(_.n.d);
+      $('.notice .copy').html(copy);
+
+    },
+
+    d: function() {
+
+      $('.notice').removeClass('on');
+      $('.notice .cta').unbind('click', _.n.d);
+      $('.fade').removeClass('on');
+
+      if (_.n.callback) {
+        _.n.callback();
+      }
+
+    }
 
   }
 

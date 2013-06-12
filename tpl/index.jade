@@ -3,6 +3,10 @@ extends layout
 block content
   include _header
 
+  .loader
+    .copy loading images..
+    .progress
+      .inner
   .body
     include _images
     .titles
@@ -19,3 +23,4 @@ block content
       .clear
   include _footer
   include _register
+  include _notice
