@@ -1,5 +1,5 @@
 .images
-  each num in [1,2,3,4,5,6]
-    .image(class='image' + num)
+  each image,index in images
+    .image(class='image' + index + ' iname_' + image)
   .gradient
 

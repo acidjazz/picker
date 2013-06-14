@@ -2,6 +2,8 @@ var _ = {
 
   i: function() {
 
+    console.log('initiated');
+
     game.load(function(response) {
       _.handlers();
       rotate.i();
@@ -25,6 +27,11 @@ var _ = {
       case 'register' :
         $('.bubbles').addClass('hidden');
         register.i();
+        break;
+
+      case 'play' :
+        $('.bubbles').addClass('hidden');
+        game.i();
         break;
 
     }

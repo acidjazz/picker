@@ -8,7 +8,6 @@ var rotate = {
   i: function() {
 
     $('.image1').addClass('show');
-
     rotate.interval = setInterval(rotate.rotate, rotate.delay*1000);
 
   },
@@ -21,6 +20,13 @@ var rotate = {
 
     $('.image').removeClass('show');
     $('.image' + rotate.number).addClass('show');
+
+  },
+
+  d: function() {
+
+    clearInterval(rotate.interval);
+    console.log('rotater interval cleared');
 
   }
 

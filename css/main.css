@@ -235,6 +235,113 @@
 .fade.on {
   height: 100%;
 }
+.circle {
+  position: absolute;
+  z-index: 5;
+  top: 200px;
+  left: 100px;
+  width: 600px;
+  height: 600px;
+  text-align: center;
+  display: none;
+}
+.circle .chooser,
+.circle .correct,
+.circle .wrong {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.circle .chooser.on,
+.circle .correct.on,
+.circle .wrong.on {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+.circle .chooser .choose,
+.circle .correct .choose,
+.circle .wrong .choose {
+  cursor: pointer;
+  display: inline-block;
+  border: 2px solid #fff;
+  font-size: 1.5em;
+  margin: 450px 20px;
+  padding: 10px 20px;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  -ms-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.circle .chooser .choose:hover,
+.circle .correct .choose:hover,
+.circle .wrong .choose:hover {
+  background-color: #009ec1;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  -o-transition: background-color 0.2s;
+  -ms-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.circle .correct,
+.circle .wrong {
+  background-color: rgba(0,0,0,0.65);
+}
+.circle .correct > .title,
+.circle .wrong > .title {
+  font-size: 4em;
+  margin: 150px 0 0 0;
+}
+.circle .correct > .copy,
+.circle .wrong > .copy {
+  font-family: ApexNewLight;
+  margin: 50px auto 0 auto;
+  width: 300px;
+}
+.circle .correct > .cta,
+.circle .wrong > .cta {
+  cursor: pointer;
+  font-size: 2.5em;
+  margin: 50px 0 0 0;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  transition: color 0.2s;
+}
+.circle .correct > .cta:hover,
+.circle .wrong > .cta:hover {
+  color: #009ec1;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  transition: color 0.2s;
+}
 body,
 html {
   margin: 0;
@@ -382,12 +489,12 @@ html {
   -ms-transition: all 0.2s;
   transition: all 0.2s;
 }
-.body .bubbles .bubble .copy {
+.body .bubbles .bubble > .copy {
   font-size: 2.5em;
   text-align: center;
   margin: 120px 0 0 0;
 }
-.body .bubbles .bubble .copy .smaller {
+.body .bubbles .bubble > .copy > .smaller {
   font-family: ApexNewLight;
   font-size: 0.5em;
 }
@@ -435,23 +542,81 @@ html {
   -ms-transition: opacity 2s;
   transition: opacity 2s;
 }
-.images .image.image0 {
+.images .image.image0,
+.images .image.iname_beachhouses.png {
   background-image: url("/img/game/beachhouses.png");
 }
-.images .image.image1 {
+.images .image.image1,
+.images .image.iname_citycouple.png {
   background-image: url("/img/game/citycouple.png");
 }
-.images .image.image2 {
+.images .image.image2,
+.images .image.iname_paddleboard.png {
   background-image: url("/img/game/paddleboard.png");
 }
-.images .image.image3 {
+.images .image.image3,
+.images .image.iname_skyfloor.png {
   background-image: url("/img/game/skyfloor.png");
 }
-.images .image.image4 {
+.images .image.image4,
+.images .image.iname_trainstation.png {
   background-image: url("/img/game/trainstation.png");
 }
-.images .image.image5 {
+.images .image.image5,
+.images .image.iname_wineladies.png {
   background-image: url("/img/game/wineladies.png");
+}
+.images .image.image6,
+.images .image.iname_boatwoman.png {
+  background-image: url("/img/game/boatwoman.png");
+}
+.images .image.image7,
+.images .image.iname_coffee.png {
+  background-image: url("/img/game/coffee.png");
+}
+.images .image.image8,
+.images .image.iname_eyeball.png {
+  background-image: url("/img/game/eyeball.png");
+}
+.images .image.image9,
+.images .image.iname_oceanwoman.png {
+  background-image: url("/img/game/oceanwoman.png");
+}
+.images .image.image10,
+.images .image.iname_road.png {
+  background-image: url("/img/game/road.png");
+}
+.images .image.image11,
+.images .image.iname_beachcrowd.png {
+  background-image: url("/img/game/beachcrowd.png");
+}
+.images .image.image12,
+.images .image.iname_womantrees.png {
+  background-image: url("/img/game/womantrees.png");
+}
+.images .image.image13,
+.images .image.iname_beachgroup.png {
+  background-image: url("/img/game/beachgroup.png");
+}
+.images .image.image14,
+.images .image.iname_beachjumpgirl.png {
+  background-image: url("/img/game/beachjumpgirl.png");
+}
+.images .image.image15,
+.images .image.iname_doghill.png {
+  background-image: url("/img/game/doghill.png");
+}
+.images .image.image16,
+.images .image.iname_houses.png {
+  background-image: url("/img/game/houses.png");
+}
+.images .image.image17,
+.images .image.iname_outlawsbar.png {
+  background-image: url("/img/game/outlawsbar.png");
+}
+.images .image.image18,
+.images .image.iname_parkwoman.png {
+  background-image: url("/img/game/parkwoman.png");
 }
 .images .gradient {
   position: absolute;
