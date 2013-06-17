@@ -1,7 +1,8 @@
 var game = {
 
   cround: 0,
-  rounds: 5,
+  rounds: 2,
+  score: 0,
 
   queue: [],
   imagse: [],
@@ -32,7 +33,7 @@ var game = {
         $('.loader .progress .inner').css({width: width + 'px'});
 
         if (loaded == len) {
-          setTimeout(function() { complete(); }, 200);
+          setTimeout(complete, 200);
         }
 
       }
@@ -45,6 +46,7 @@ var game = {
   handlers: function() {
     $('.chooser .choose').click(game.choose);
     $('.circle .cta').click(game.next);
+    $('.circle .ctas .cta').click(game.cta);
   },
 
   choose: function() {
@@ -52,10 +54,41 @@ var game = {
     var choice = $(this).data('choice');
 
     $('.circle .chooser').removeClass('on');
+
+    if (game.cround == game.rounds) {
+      $('.next').html('finish');
+    } else {
+      $('.next').html('next image');
+    }
+
     if (game.answer()) {
+      game.score++;
       $('.circle .correct').addClass('on');
     } else {
       $('.circle .wrong').addClass('on');
+    }
+
+  },
+
+  cta: function() {
+
+    var task = $(this).data('cta');
+
+    switch (task) {
+
+      case 'back' :
+        game.d();
+        setTimeout(function() { $('.bubbles').removeClass('hidden'); }, 500);
+        break;
+
+      case 'register' :
+        game.d();
+        register.i();
+        break;
+
+      default :
+        console.log(task);
+        break;
 
     }
 
@@ -63,7 +96,7 @@ var game = {
 
   next: function() {
 
-    $('.circle .correct, .circle  .wrong').removeClass('on');
+    $('.circle .correct, .circle .wrong').removeClass('on');
     game.round();
 
   },
@@ -76,6 +109,12 @@ var game = {
 
     if (game.queue.length < 1) {
       game.queue = game.pick();
+      game.score = 0;
+    }
+    
+    if (game.cround == game.rounds) {
+      game.finish();
+      return true;
     }
 
     game.cround++;
@@ -84,7 +123,17 @@ var game = {
     $('.image.iname_' + game.queue[game.cround]).addClass('show');
 
     $('.circle').show();
-    $('.chooser').addClass('on');
+    setTimeout(function() {
+      $('.chooser').addClass('on');
+    }, 500);
+
+  },
+
+  finish: function() {
+
+    $('.circle .correct, .circle .wrong').removeClass('on');
+    $('.finished').addClass('on');
+    $('.finished .score').html(game.score + ' / ' + game.rounds);
 
   },
 
@@ -95,7 +144,7 @@ var game = {
     var images = game.images;
     game.randomize(images);
 
-    return images.slice(0, game.rounds);
+    return images.slice(0, game.rounds+1);
 
   },
 
@@ -110,6 +159,18 @@ var game = {
       myArray[i] = myArray[j]; 
       myArray[j] = temp;
     }
+
+  },
+
+  d: function() {
+
+    game.cround = game.score = 0;
+    game.queue = [];
+
+    $('.chooser .choose').unbind('click', game.choose);
+    $('.circle .cta').unbind('click', game.next);
+    $('.circle .ctas .cta').unbind('click', game.cta);
+    $('.circle .finished').removeClass('on');
 
   }
 

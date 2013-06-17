@@ -31,6 +31,7 @@ var _ = {
 
       case 'play' :
         $('.bubbles').addClass('hidden');
+        //setTimeout(game.i, 500);
         game.i();
         break;
 
