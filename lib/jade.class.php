@@ -27,7 +27,7 @@ class jade {
     fwrite($handle, json_encode($array));
     fclose($handle);
 
-    $cmd = "/usr/local/lib/node_modules/jade/bin/jade -p ".$path.$template." -P --obj '$file' < ".$path.$template;
+    $cmd = "jade -p ".$path.$template." -P --obj '$file' < ".$path.$template;
 
     $test = exec($cmd, $results, $code);
     $output = join("\r\n", $results);

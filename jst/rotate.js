@@ -1,7 +1,7 @@
 var rotate = {
 
   delay: 10,
-  images: ['beachhouses.png', 'citycouple.png', 'paddleboard.png', 'skyfloor.png', 'trainstation.png', 'wineladies.png'],
+  images: ['beachhouses.jpeg', 'citycouple.jpeg', 'paddleboard.jpeg', 'skyfloor.jpeg', 'trainstation.jpeg', 'wineladies.jpeg'],
   interval: false,
   number: 1,
 

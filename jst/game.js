@@ -1,7 +1,7 @@
 var game = {
 
   cround: 0,
-  rounds: 2,
+  rounds: 5,
   score: 0,
 
   queue: [],
@@ -38,7 +38,7 @@ var game = {
 
       }
 
-      img[i].src = '/img/game/' + game.images[i];
+      img[i].src = '/img/game/' + game.images[i] + '.jpeg';
     }
 
   },
