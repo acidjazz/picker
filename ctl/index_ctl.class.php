@@ -4,8 +4,18 @@ class index_ctl {
 
   public $admin = false;
   public $capable = false;
+  public $states = ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
 
   public $images = [
+
+    'coffee',
+    'beachcrowd',
+    'doghill',
+    'eyeball',
+    'houses',
+    'road',
+    'parkwoman',
+
     'beachhouses',
     'citycouple',
     'paddleboard',
@@ -13,22 +23,15 @@ class index_ctl {
     'trainstation',
     'wineladies',
     'boatwoman',
-    'coffee',
-    'eyeball',
     'oceanwoman',
-    'road',
-    'beachcrowd',
     'womantrees',
     'beachgroup',
     'beachjumpgirl',
-    'doghill',
-    'houses',
-    'outlawsbar',
-    'parkwoman'
+    'outlawsbar'
   ];
 
   public function index() {
-    jade::c('index', ['admin' => $this->admin, 'imageJSON' => json_encode($this->images), 'images' => $this->images]); 
+    jade::c('index', ['admin' => $this->admin, 'imageJSON' => json_encode($this->images), 'images' => $this->images, 'states' => $this->states]); 
   }
 
   public function register() {

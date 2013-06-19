@@ -61,7 +61,7 @@ var game = {
       $('.next').html('next image');
     }
 
-    if (game.answer()) {
+    if (game.answer(choice)) {
       game.score++;
       $('.circle .correct').addClass('on');
     } else {
@@ -101,8 +101,20 @@ var game = {
 
   },
 
-  answer: function() {
-    return Math.random() < 0.5 ? true : false;
+  answer: function(choice) {
+
+    var answer = game.images.indexOf(game.queue[game.cround]);
+
+    if (choice == 'sf' && answer < 7) {
+      return true;
+    }
+
+    if (choice == 'nz' && answer > 6) {
+      return true;
+    }
+
+    return false;
+
   },
 
   round: function() {
@@ -140,25 +152,21 @@ var game = {
   pick: function() {
 
     game.queue = [];
-
-    var images = game.images;
-    game.randomize(images);
-
-    return images.slice(0, game.rounds+1);
+    var clone = game.images.slice(0);
+    return game.randomize(clone).slice(0, game.rounds+1);
 
   },
 
-  randomize: function (myArray) {
+  randomize:  function(array) {
 
-    var i = myArray.length, j, temp;
-
-    if ( i === 0 ) return false;
-    while ( --i ) {
-      j = Math.floor( Math.random() * ( i + 1 ) );
-      temp = myArray[i];
-      myArray[i] = myArray[j]; 
-      myArray[j] = temp;
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
     }
+
+    return array;
 
   },
 

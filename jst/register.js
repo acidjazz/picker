@@ -78,7 +78,9 @@ var register = {
     vals = {
       first: $('.input_first input'),
       last: $('.input_last input'),
-      email: $('.input_email input')
+      email: $('.input_email input'),
+      country: $('.input_country input'),
+      state: $('.input_state input')
     };
 
     if (user.first_name && vals.first.val() == '') {
@@ -102,7 +104,9 @@ var register = {
       signup: $('.checkbox_signup').hasClass('checked'),
       first_name: $('.input_first input').val(),
       last_name: $('.input_last input').val(),
-      email: $('.input_email input').val()
+      email: $('.input_email input').val(),
+      country: $('.input_country input').val(),
+      state: $('.input_state input').val()
     };
 
     if (form.tandc == false) {
@@ -114,12 +118,19 @@ var register = {
       _.n.i('You must provide a valid email address');
       return false;
     }
+    if (form.country == '') {
+      _.n.i('You must specify a country');
+      return false;
+    }
+    if (form.state == '') {
+      _.n.i('You must provide a state');
+      return false;
+    }
 
     var json = {
       form: JSON.stringify(form),
       user: JSON.stringify(register.user)
     }
-
 
     $.get('/index/register', json, function(response) {
 
@@ -147,11 +158,12 @@ var register = {
   },
 
   d: function() {
+
     $(document).unbind('click', register.outside);
     $('.register').unbind('click', register.inside).addClass('hidden');
     $('.register .submit').unbind('click',register.submit);
-
     $('.bubbles').removeClass('hidden');
+
   }
 
 }
