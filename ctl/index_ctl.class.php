@@ -25,10 +25,13 @@ class index_ctl {
     ],
     'houses' => [
       'correct' => 'San Francisco is known for its colorful architecture. But maybe it\'s time to discover some of Auckland\'s design gems, speckling a similar topographic landscape. Book your flight today and see for yourself.',
-      'wrong' => 'MISSING COPY FOR HOUSES WRONG'
+      'wrong' => 'You thought this was Auckland? Close. It’s San Francisco. But perhaps you need a New Zealand vacation to make sure this sort of mix-up never happens again? That’s what we thought.'
     ],
 
-    //'road',
+    'road' => [
+      'correct' => 'Yes, this is a windy road near San Francisco. But it looks like it could be Auckland, New Zealand … except they drive on the other side. Test drive Auckland for yourself, and book your flight today.',
+      'wrong' => 'Nope. This road and view isn’t Auckland, New Zealand. But it could be. Except they drive on the other side. This is a game, and it’s hard. Ease the pain with a vacation and book yourself a trip to Auckland.'
+    ],
 
     'parkwoman' => [
       'correct' => 'This nature is one of Golden Gate Park\'s many walks. In New Zealand, you can experience nine Great Walks that take you through diverse and spectacular scenery. Book a flight today and find a hike that\'s just your type.',
@@ -67,8 +70,8 @@ class index_ctl {
       'wrong' => 'Auckland is home to some of New Zealand’s best beaches. Long black-sand beaches stretch between rocky headlands along most of New Zealand’s west coast. From Piha’s black sand to stellar surf breaks, it’s your choice. Fly there now and try them all.'
     ],
     'womantrees' => [
-      'correct' => 'You know your vines. Kumeu Wine Country, west of Auckland City, was established by early European settlers more than 70 years ago. Today, these wineries produce award-winning Chardonnay, Merlot, Cabernet Sauvignon and Pinot Gris. Book your flight now and get sipping.',
-      'wrong' => 'More of a beer person? There are more than 25 wineries and vineyards on Waiheke, a large island that’s only 30 minutes by ferry from the city of Auckland. Waiheke’s climate is generally warmer than the mainland, with less humidity and rain and more sunshine hours. And Cabernets are the island’s speciality. Lucky you. Book your flight now and get sipping.'
+      'correct' => 'It’s true. Auckland has some of New Zealand’s most popular urban hiking tracks. Discover a whole new world just outside the city. Book your flight now.',
+      'wrong' => 'Take a hike. No, seriously. Check out one of Auckland’s popular walking trails. Discover a whole new world just outside the city. Book your flight now.'
     ],
     'beachgroup' => [
       'correct' => 'Take it in. There’s nothing like the beaches of Auckland just miles from the city’s buzz. Relax and enjoy the view from the edge of the world. Book your flight now.',

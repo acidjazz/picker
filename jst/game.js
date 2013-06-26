@@ -87,8 +87,6 @@ var game = {
         break;
 
       case 'share' :
-        //game.d();
-        //register.i();
         _.share();
         break;
 

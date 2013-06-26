@@ -137,7 +137,7 @@ var register = {
       if (response.error) {
         _.n.i('Error registering');
       } else {
-        _.n.i('Registration Complete', false, register.d);
+        register.post.i();
       }
 
     }, 'json');
@@ -151,10 +151,40 @@ var register = {
 
   outside: function() {
     register.d();
+    $('.bubbles').removeClass('hidden');
   },
 
   inside: function(event) {
     event.stopPropagation();
+  },
+
+  post: {
+    i: function() {
+      register.d();
+      $('.post').show();
+
+      setTimeout(function() { register.post.handlers(); }, 500);
+    },
+
+    handlers: function() {
+      $('.post .share').click(_.share);
+      $(document).bind('click', register.post.outside);
+      $('.post').click(register.inside);
+    },
+
+    outside: function() {
+      register.post.d();
+    },
+
+    d: function() {
+      $('.post .share').unbind('click', _.share);
+      $(document).unbind('click', register.post.outside);
+      $('.post').unbind('click', register.inside);
+      $('.post').hide();
+      $('.bubbles').removeClass('hidden');
+
+    }
+
   },
 
   d: function() {
@@ -162,7 +192,6 @@ var register = {
     $(document).unbind('click', register.outside);
     $('.register').unbind('click', register.inside).addClass('hidden');
     $('.register .submit').unbind('click',register.submit);
-    $('.bubbles').removeClass('hidden');
 
   }
 

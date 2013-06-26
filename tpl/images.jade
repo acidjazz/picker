@@ -5,9 +5,8 @@ html
     title the city-picker
     link(id='css', rel='stylesheet',href='/css/main.css',type='text/css',media='all')
 
-
 body
   each copy,name in images
-    img(src='/img/game/' + name + '.jpeg')
+    img(src='/img/game/' + name + '.jpeg',style='border: 2px solid #ff0000;')
     .copy correct: #{copy.correct}
     .wrong wrong: #{copy.wrong}

@@ -43,10 +43,11 @@ var _ = {
 
     FB.ui({
       method: 'feed',
-      name: 'Air New Zealand &#8210; #nzontheway',
-      description: 'Tag your Instagram photo with #NZontheWay for your chance to win two tickets to Australia with a stop in New Zealand.',
-      link: 'http://www.google.com/'
-      //picture: $(this).data('image')
+      link: 'http://picker.256.sh/',
+      picture: 'http://picker.256.sh/img/share.jpg',
+      name: 'SF or Auckland?',
+      caption: ' ',
+      description: 'Play City Picker now or enter to win 2 free tickets to Auckland, NZ from SFO.'
     },
       function (response) {
 

@@ -157,7 +157,7 @@
 .register > .submit {
   float: right;
   font-size: 3em;
-  margin: -50px 10px 0 20px;
+  margin: -50px 120px 0 20px;
   padding: 0 20px;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
@@ -165,9 +165,14 @@
   -ms-transition: color 0.2s;
   transition: color 0.2s;
   cursor: pointer;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  -ms-transition: color 0.2s;
+  transition: color 0.2s;
 }
 .register > .submit:hover {
-  color: rgba(0,158,193,0.65);
+  text-shadow: 0px 0px 3px #fff;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
   -o-transition: color 0.2s;
@@ -209,7 +214,11 @@
   font-size: 1.2em;
   line-height: 1.3em;
   width: 575px;
-  margin: auto;
+  margin: 50px auto;
+}
+.post > .share {
+  font-size: 2em;
+  cursor: pointer;
 }
 .notice {
   position: fixed;
@@ -396,8 +405,9 @@
 .circle .correct > .copy,
 .circle .wrong > .copy {
   font-family: ApexNewLight;
-  margin: 50px auto 0 auto;
-  width: 300px;
+  margin: 20px auto 0 auto;
+  width: 350px;
+  line-height: 1.2em;
 }
 .circle .correct > .cta,
 .circle .wrong > .cta {
@@ -443,7 +453,7 @@
   transition: color 0.2s;
 }
 .circle .finished > .ctas > .cta:hover {
-  color: rgba(0,158,193,0.65);
+  text-shadow: 0px 0px 3px #fff;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
   -o-transition: color 0.2s;
@@ -619,7 +629,7 @@ html {
 }
 .footer .booknow {
   text-align: right;
-  padding: 25px 0 20px 0;
+  padding: 25px 20px 20px 0;
 }
 .footer .booknow a {
   color: #fff;
@@ -633,6 +643,7 @@ html {
 .footer .copy2 {
   text-align: right;
   font-family: ApexNewLight;
+  padding: 0 20px 0 0;
   font-size: 0.6em;
   line-height: 1em;
 }

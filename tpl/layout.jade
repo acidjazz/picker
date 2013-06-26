@@ -31,10 +31,11 @@ html
 
       FB.Canvas.setAutoGrow();
       _.sr = '#{_p.signed_request}';
+      _.FB_URL = '#{_c.FB_URL}';
       _.i();
 
       if (_.sr == '') {
-        //location.href = '#{_c.FB_URL}';
+        location.href = '#{_c.FB_URL}';
       }
 
     };
