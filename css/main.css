@@ -85,7 +85,7 @@
 }
 .register > .copy {
   padding: 20px 120px;
-  font-family: ApexNewLight;
+  font-family: ApexNewBook;
   text-align: center;
   font-size: 1em;
   line-height: 1.1em;
@@ -128,7 +128,7 @@
 }
 .register > .form .copy {
   float: left;
-  font-family: ApexNewLight;
+  font-family: ApexNewBook;
   font-size: 0.9em;
   margin: 0 0 0 40px;
 }
@@ -148,7 +148,7 @@
 }
 .register .input input {
   outline: none;
-  font-family: ApexNewLight;
+  font-family: ApexNewBook;
   font-size: 1.2em;
   font-size: 1.3em;
   border: none;
@@ -210,7 +210,7 @@
   margin: 20px auto;
 }
 .post > .copy {
-  font-family: ApexNewLight;
+  font-family: ApexNewBook;
   font-size: 1.2em;
   line-height: 1.3em;
   width: 575px;
@@ -223,7 +223,7 @@
 .notice {
   position: fixed;
   width: 600px;
-  top: 100px;
+  top: 200px;
   left: 50%;
   margin-left: -300px;
   z-index: 20;
@@ -243,7 +243,7 @@
   transition: transform 0.2s;
 }
 .notice .copy {
-  font-family: ApexNewLight;
+  font-family: ApexNewBook;
   font-size: 1.2em;
   text-align: center;
   padding: 40px 0;
@@ -404,7 +404,7 @@
 }
 .circle .correct > .copy,
 .circle .wrong > .copy {
-  font-family: ApexNewLight;
+  font-family: ApexNewBook;
   margin: 20px auto 0 auto;
   width: 350px;
   line-height: 1.2em;
@@ -423,7 +423,7 @@
   margin: 100px 0 0 0;
 }
 .circle .finished > .copyA {
-  font-family: ApexNewLight;
+  font-family: ApexNewBook;
   font-size: 1em;
 }
 .circle .finished > .score {
@@ -431,7 +431,7 @@
   margin: 10px 0 0 0;
 }
 .circle .finished > .copyB {
-  font-family: ApexNewLight;
+  font-family: ApexNewBook;
   font-size: 0.8em;
   padding: 10px 50px;
 }
@@ -508,7 +508,7 @@ html {
   margin: 100px 0 20px 0;
   text-align: center;
   font-size: 2em;
-  font-family: ApexNewLight;
+  font-family: ApexNewBook;
 }
 .loader .progress {
   width: 600px;
@@ -541,7 +541,7 @@ html {
 }
 .body .titles .copy1,
 .body .titles .copy3 {
-  font-family: ApexNewLight;
+  font-family: ApexNewBook;
 }
 .body .titles .copy1 {
   font-size: 1.4em;
@@ -624,7 +624,7 @@ html {
   margin: 120px 0 0 0;
 }
 .body .bubbles .bubble > .copy > .smaller {
-  font-family: ApexNewLight;
+  font-family: ApexNewBook;
   font-size: 0.5em;
 }
 .footer .booknow {
@@ -636,13 +636,13 @@ html {
 }
 .footer .copy1 {
   text-align: center;
-  font-family: ApexNewLight;
+  font-family: ApexNewBook;
   font-size: 1.2em;
   line-height: 1.3em;
 }
 .footer .copy2 {
   text-align: right;
-  font-family: ApexNewLight;
+  font-family: ApexNewBook;
   padding: 0 20px 0 0;
   font-size: 0.6em;
   line-height: 1em;

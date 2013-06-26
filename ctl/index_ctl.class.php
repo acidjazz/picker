@@ -7,6 +7,8 @@ class index_ctl {
   public $states = ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
 
   public $images = [
+
+    // these are sf
     'coffee' => [
       'correct' => 'You got this flat right. In New Zealand they call this a "flat white." With hundreds of coffee shops around Auckland there\'s plenty of buzz to fuel your adventure. Order yours the right way. Book your flight today.',
       'wrong' => 'Nope, that isn\'t Auckland. It\'s San Francisco. But Kiwis are passionate about coffee, too. Order a "flat white" at one of the many coffee shops around the city. Book your flight today.'
@@ -32,15 +34,16 @@ class index_ctl {
       'correct' => 'Yes, this is a windy road near San Francisco. But it looks like it could be Auckland, New Zealand … except they drive on the other side. Test drive Auckland for yourself, and book your flight today.',
       'wrong' => 'Nope. This road and view isn’t Auckland, New Zealand. But it could be. Except they drive on the other side. This is a game, and it’s hard. Ease the pain with a vacation and book yourself a trip to Auckland.'
     ],
-
     'parkwoman' => [
       'correct' => 'This nature is one of Golden Gate Park\'s many walks. In New Zealand, you can experience nine Great Walks that take you through diverse and spectacular scenery. Book a flight today and find a hike that\'s just your type.',
-      'wrong' => 'You thought this was Auckland? Close. It\'s San Francisco. But perhaps you need a New Zealand vacation to make sure this sort of mix-up never happens again? That\'s what we thought.'
+      'wrong' => 'But don\'t worry. It looks like New Zealand because there are many walks just like this, right around Auckland. In fact, there are nine Great Walks that take you through diverse and spectacular scenery. Book a flight today and find a hike that\'s just your type.'
     ],
     'beachhouses' => [
       'correct' => 'Those hypnotizing colors are of the San Francisco Bay. But Auckland’s Bay is equally stunning, offering views of epic southern hemisphere sunsets and beaches everywhere. Book your flight today.',
       'wrong' => 'That’s not Auckland. But maybe you need to go check out the New Zealand city a little closer, so you can get this answer right next time. Sound good? Yeah. It does. Book your flight today.'
     ],
+
+    // these are new zealand
     'citycouple' => [
       'correct' => 'Auckland lights up at night! With hundreds of restaurants, art galleries and clubs, this city stays up late. Book a flight now to discover it for yourself.',
       'wrong' => 'Auckland glows at night! Stylish shopping precincts, delectable restaurant districts and a sparkling nightlife have travelers raving. Book a flight now to discover it for yourself.'

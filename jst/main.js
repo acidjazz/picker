@@ -43,8 +43,8 @@ var _ = {
 
     FB.ui({
       method: 'feed',
-      link: 'http://picker.256.sh/',
-      picture: 'http://picker.256.sh/img/share.jpg',
+      link: 'https://www.facebook.com/pages/Draftfcb-labs/487462011308540?sk=app_467666166644037',
+      picture: 'https://picker.256.sh/img/share.jpg',
       name: 'SF or Auckland?',
       caption: ' ',
       description: 'Play City Picker now or enter to win 2 free tickets to Auckland, NZ from SFO.'

@@ -109,11 +109,11 @@ var game = {
 
     var answer = game.images.indexOf(game.queue[game.cround]);
 
-    if (choice == 'sf' && answer < 7) {
+    if (choice == 'sf' && answer < 8) {
       return true;
     }
 
-    if (choice == 'nz' && answer > 6) {
+    if (choice == 'nz' && answer > 7) {
       return true;
     }
 
