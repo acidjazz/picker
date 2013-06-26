@@ -64,6 +64,8 @@ body,html
     padding 0 0 0 40px
     .copy1, .copy3
       font-family ApexNewLight
+    .copy1
+      font-size 1.4em
     .copy2
       font-size 3em
     .copy3
@@ -92,9 +94,8 @@ body,html
       color #fff
       transition all 0.2s
       &.bubbleRight .copy
-        font-size 1.5em  
         > .smaller
-          font-size 1em
+          font-size 0.4em
       &:hover
         background-color rgba(blue1, 0.65)
       &:hover .copy
@@ -108,15 +109,20 @@ body,html
           font-size 0.5em
 
 .footer
-  text-align center
+  .booknow
+    text-align right
+    padding 25px 0 20px 0
+    a
+      color white
   .copy1
+    text-align center
     font-family ApexNewLight
     font-size 1.2em
     line-height 1.3em
   .copy2
+    text-align right
     font-family ApexNewLight
-    padding 20px 20px 0 20px
-    font-size 0.9em
+    font-size 0.6em
     line-height 1em
 
 .images
@@ -138,7 +144,7 @@ body,html
     left 0px
     width 810px
     height 791px
-    background linear-gradient(top, rgba(0,0,0,1) 0%, transparent 20%, transparent 80%, rgba(0,0,0,1) 100%)
+    background linear-gradient(top, rgba(0,0,0,1) 0%, transparent 40%, transparent 80%, rgba(0,0,0,1) 100%)
     box-shadow inset 0px 0px 100px 10px rgba(0, 0, 0, 0.8)
 
 @keyframes fromLeft

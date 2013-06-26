@@ -18,6 +18,7 @@ html
   script
 
     game.images = !{imageJSON};
+    game.imageCopy = !{imageCopyJSON};
 
     window.fbAsyncInit = function() {
 
@@ -33,7 +34,7 @@ html
       _.i();
 
       if (_.sr == '') {
-        location.href = '#{_c.FB_URL}';
+        //location.href = '#{_c.FB_URL}';
       }
 
     };

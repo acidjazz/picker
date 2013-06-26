@@ -5,7 +5,7 @@ var game = {
   score: 0,
 
   queue: [],
-  imagse: [],
+  images: [],
 
   i: function() {
 
@@ -86,6 +86,12 @@ var game = {
         register.i();
         break;
 
+      case 'share' :
+        //game.d();
+        //register.i();
+        _.share();
+        break;
+
       default :
         console.log(task);
         break;
@@ -134,9 +140,13 @@ var game = {
     $('.image').removeClass('show');
     $('.image.iname_' + game.queue[game.cround]).addClass('show');
 
+
+
     $('.circle').show();
     setTimeout(function() {
       $('.chooser').addClass('on');
+      $('.correct .copy').html(game.imageCopy[game.queue[game.cround]].correct);
+      $('.wrong .copy').html(game.imageCopy[game.queue[game.cround]].wrong);
     }, 500);
 
   },

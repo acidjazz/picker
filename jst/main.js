@@ -45,8 +45,8 @@ var _ = {
       method: 'feed',
       name: 'Air New Zealand &#8210; #nzontheway',
       description: 'Tag your Instagram photo with #NZontheWay for your chance to win two tickets to Australia with a stop in New Zealand.',
-      link: _.g_url + '?id=' + $(this).data('id'),
-      picture: $(this).data('image')
+      link: 'http://www.google.com/'
+      //picture: $(this).data('image')
     },
       function (response) {
 

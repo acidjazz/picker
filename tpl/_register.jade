@@ -1,28 +1,25 @@
 
 .register.hidden
-  .title contest registration
+  .title sweepstakes registration
   .copy It's a sweepstakes.  The more you play along, the higher your chances for winning.
-    | Register now to win two free ticketrs from SFO to Auckland
+    | Register now to win two free ticketrs from SFO to Auckland.
 
   .form
     .right
       .option
         .label TERMS AND CONDITIONS
-        .copy Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat ante in tellus pretium, sed aliquam enim feugiat. 
+        .copy Terms and Conditions
         .checkbox.checkbox_tandc
       .clear
       .option
         .label SIGN ME UP
-        .copy For emails, promotions, and all kinds of other goodies.
+        .copy To receive the latest news and special e-mail<br /> offers form Air New Zealand.
         .checkbox.checkbox_signup.checked
       .option
-        .label STATE
-        .input.input_state
+        .label EMAIL
+        .input.input_email
           input(type='text')
-      .option
-        .label COUNTRY
-        .input.input_country
-          input(type='text')
+
     .left
       .option
         .label FIRST NAME
@@ -33,14 +30,18 @@
         .input.input_last
           input(type='text')
       .option
-        .label EMAIL
-        .input.input_email
+        .label STATE
+        .input.input_state
           input(type='text')
-  .clear
+      .option
+        .label COUNTRY
+        .input.input_country
+          input(type='text')
+
   .submit submit
 .post
   .title thank you for entering
   .arrow
-  .copy Click "like" and we'll double your chances of winning! Fun!
+  .copy Click "like" for an extra sweepstakes entry! Fun!
     | More chances for getting your two hands on two tickets to
     | Auckland on Air New Zealand.

@@ -35,7 +35,10 @@
 }
 .header .sfo {
   float: left;
-  background-image: url("/img/sfo.png");
+  background-image: url("/img/sfologo.png");
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%;
   width: 97px;
   height: 52px;
   margin: 0 0 0 10px;
@@ -120,13 +123,13 @@
 }
 .register > .form .label {
   font-family: ApexNewMedium;
-  font-size: 1.3em;
+  font-size: 1em;
   padding: 10px;
 }
 .register > .form .copy {
-  float: right;
+  float: left;
   font-family: ApexNewLight;
-  font-size: 1em;
+  font-size: 0.9em;
   margin: 0 0 0 40px;
 }
 .register > .left {
@@ -147,13 +150,14 @@
   outline: none;
   font-family: ApexNewLight;
   font-size: 1.2em;
+  font-size: 1.3em;
   border: none;
   width: 320px;
 }
 .register > .submit {
-  float: left;
+  float: right;
   font-size: 3em;
-  margin: 20px 0 0 20px;
+  margin: -50px 10px 0 20px;
   padding: 0 20px;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
@@ -163,7 +167,7 @@
   cursor: pointer;
 }
 .register > .submit:hover {
-  color: #009ec1;
+  color: rgba(0,158,193,0.65);
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
   -o-transition: color 0.2s;
@@ -202,7 +206,8 @@
 }
 .post > .copy {
   font-family: ApexNewLight;
-  font-size: 1.5em;
+  font-size: 1.2em;
+  line-height: 1.3em;
   width: 575px;
   margin: auto;
 }
@@ -274,10 +279,10 @@
 .circle {
   position: absolute;
   z-index: 5;
-  top: 200px;
-  left: 100px;
-  width: 600px;
-  height: 600px;
+  top: 250px;
+  left: 150px;
+  width: 500px;
+  height: 500px;
   text-align: center;
   display: none;
 }
@@ -325,7 +330,7 @@
 .circle .correct .choose:hover,
 .circle .wrong .choose:hover,
 .circle .finished .choose:hover {
-  background-color: #009ec1;
+  background-color: rgba(0,158,193,0.65);
   -webkit-transition: background-color 0.2s;
   -moz-transition: background-color 0.2s;
   -o-transition: background-color 0.2s;
@@ -386,7 +391,7 @@
 .circle .correct > .title,
 .circle .wrong > .title {
   font-size: 4em;
-  margin: 150px 0 0 0;
+  margin: 100px 0 0 0;
 }
 .circle .correct > .copy,
 .circle .wrong > .copy {
@@ -399,27 +404,13 @@
   cursor: pointer;
   font-size: 2.5em;
   margin: 50px 0 0 0;
-  -webkit-transition: color 0.2s;
-  -moz-transition: color 0.2s;
-  -o-transition: color 0.2s;
-  -ms-transition: color 0.2s;
-  transition: color 0.2s;
-}
-.circle .correct > .cta:hover,
-.circle .wrong > .cta:hover {
-  color: #009ec1;
-  -webkit-transition: color 0.2s;
-  -moz-transition: color 0.2s;
-  -o-transition: color 0.2s;
-  -ms-transition: color 0.2s;
-  transition: color 0.2s;
 }
 .circle .finished {
   background-color: rgba(0,0,0,0.65);
 }
 .circle .finished > .title {
-  font-size: 3em;
-  margin: 150px 0 0 0;
+  font-size: 2.5em;
+  margin: 100px 0 0 0;
 }
 .circle .finished > .copyA {
   font-family: ApexNewLight;
@@ -427,22 +418,24 @@
 }
 .circle .finished > .score {
   font-size: 4em;
+  margin: 10px 0 0 0;
 }
 .circle .finished > .copyB {
   font-family: ApexNewLight;
   font-size: 0.8em;
-  padding: 20px 50px;
+  padding: 10px 50px;
 }
 .circle .finished > .ctas {
   width: 510px;
   margin: auto;
   text-align: center;
+  margin: 10px 0 0 60px;
   font-size: 1.4em;
 }
 .circle .finished > .ctas > .cta {
   cursor: pointer;
   width: 162px;
-  display: inline-block;
+  float: left;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
   -o-transition: color 0.2s;
@@ -450,7 +443,7 @@
   transition: color 0.2s;
 }
 .circle .finished > .ctas > .cta:hover {
-  color: #009ec1;
+  color: rgba(0,158,193,0.65);
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
   -o-transition: color 0.2s;
@@ -458,7 +451,9 @@
   transition: color 0.2s;
 }
 .circle .finished > .ctas > .cta.back {
-  font-size: 2em;
+  font-size: 1.4em;
+  margin: 100px 0 0 0;
+  width: 60px;
 }
 body,
 html {
@@ -538,6 +533,9 @@ html {
 .body .titles .copy3 {
   font-family: ApexNewLight;
 }
+.body .titles .copy1 {
+  font-size: 1.4em;
+}
 .body .titles .copy2 {
   font-size: 3em;
 }
@@ -597,11 +595,8 @@ html {
   -ms-transition: all 0.2s;
   transition: all 0.2s;
 }
-.body .bubbles .bubble.bubbleRight .copy {
-  font-size: 1.5em;
-}
 .body .bubbles .bubble.bubbleRight .copy > .smaller {
-  font-size: 1em;
+  font-size: 0.4em;
 }
 .body .bubbles .bubble:hover {
   background-color: rgba(0,158,193,0.65);
@@ -622,18 +617,23 @@ html {
   font-family: ApexNewLight;
   font-size: 0.5em;
 }
-.footer {
-  text-align: center;
+.footer .booknow {
+  text-align: right;
+  padding: 25px 0 20px 0;
+}
+.footer .booknow a {
+  color: #fff;
 }
 .footer .copy1 {
+  text-align: center;
   font-family: ApexNewLight;
   font-size: 1.2em;
   line-height: 1.3em;
 }
 .footer .copy2 {
+  text-align: right;
   font-family: ApexNewLight;
-  padding: 20px 20px 0 20px;
-  font-size: 0.9em;
+  font-size: 0.6em;
   line-height: 1em;
 }
 .images {
@@ -672,12 +672,12 @@ html {
   left: 0px;
   width: 810px;
   height: 791px;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000), color-stop(0.2, transparent), color-stop(0.8, transparent), color-stop(1, #000));
-  background: -webkit-linear-gradient(top, #000 0%, transparent 20%, transparent 80%, #000 100%);
-  background: -moz-linear-gradient(top, #000 0%, transparent 20%, transparent 80%, #000 100%);
-  background: -o-linear-gradient(top, #000 0%, transparent 20%, transparent 80%, #000 100%);
-  background: -ms-linear-gradient(top, #000 0%, transparent 20%, transparent 80%, #000 100%);
-  background: linear-gradient(top, #000 0%, transparent 20%, transparent 80%, #000 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000), color-stop(0.4, transparent), color-stop(0.8, transparent), color-stop(1, #000));
+  background: -webkit-linear-gradient(top, #000 0%, transparent 40%, transparent 80%, #000 100%);
+  background: -moz-linear-gradient(top, #000 0%, transparent 40%, transparent 80%, #000 100%);
+  background: -o-linear-gradient(top, #000 0%, transparent 40%, transparent 80%, #000 100%);
+  background: -ms-linear-gradient(top, #000 0%, transparent 40%, transparent 80%, #000 100%);
+  background: linear-gradient(top, #000 0%, transparent 40%, transparent 80%, #000 100%);
   -webkit-box-shadow: inset 0px 0px 100px 10px rgba(0,0,0,0.8);
   box-shadow: inset 0px 0px 100px 10px rgba(0,0,0,0.8);
 }
