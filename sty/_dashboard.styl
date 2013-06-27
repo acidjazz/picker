@@ -1,0 +1,80 @@
+
+.dashboard
+  position absolute
+  top 100px
+  right 0px
+  z-index 20
+  transform matrix(1, 0, 0, 1, 90, 0)
+  transition 0.5s ease
+  &.closed
+    transform matrix(1, 0, 0, 1, 150, 0)
+    transition 0.5s ease
+  &:hover, &.open
+    transform matrix(1, 0, 0, 1, 0, 0)
+    transition 0.5s ease
+  .step
+    cursor pointer
+    width 130px
+    height 40px
+    padding 10px
+    background-color rgba(black, 0.65)
+    &.bounce .icon
+      animation tada 2s ease-out 0.2s
+    &.on
+      color white
+      background-color rgba(blue1, 0.65)
+      box-shadow 0px 0px 10px 0px rgba(blue1, 0.65)
+      transition 2s ease
+    &:hover
+      text-shadow 0px 0px 10px rgba(blue1, 1)
+    &.iregister
+      border-radius 10px 0 0 0
+      border-bottom 1px solid white
+    &.ilike
+      border-bottom 1px solid white
+    &.ishare
+      border-radius 0 0 0 10px
+    .icon
+      float left
+      width 40px
+      height 40px
+    .copy
+      line-height 40px
+      apex()
+      margin 0 0 0 60px
+
+@keyframes bounce
+  0%
+    transform matrix(1, 0, 0, 1, 0, 0)
+  10%
+    transform matrix(1, 0, 0, 1, 0, 0)
+  20%
+    transform matrix(1, 0, 0, 1, 0, -6)
+  30%
+    transform matrix(1, 0, 0, 1, 0, -13)
+  40%
+    transform matrix(1, 0, 0, 1, 0, -20)
+  50%
+    transform matrix(1, 0, 0, 1, 0, 10)
+  60%
+    transform matrix(1, 0, 0, 1, 0, -20)
+  70%
+    transform matrix(1, 0, 0, 1, 0, 5)
+  80%
+    transform matrix(1, 0, 0, 1, 0, 0)
+  90%
+    transform matrix(1, 0, 0, 1, 0, 0)
+  100%
+    transform matrix(1, 0, 0, 1, 0, 0)
+
+@keyframes tada
+  0% 
+    transform scale(1)
+  10%, 20% 
+    transform scale(0.9) rotate(-5deg)
+  30%, 50%, 70%, 90% 
+    transform scale(1.5) rotate(5deg)
+  40%, 60%, 80% 
+    transform scale(1.5) rotate(-5deg)
+  100% 
+    transform scale(1) rotate(0)

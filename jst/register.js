@@ -2,6 +2,7 @@
 var register = {
 
   user: {},
+  shared: false,
   registered: false,
 
   i: function() {
@@ -137,7 +138,10 @@ var register = {
       if (response.error) {
         _.n.i('Error registering');
       } else {
+        register.registered = true;
+        _.uid = register.user.id;
         register.post.i();
+        dashboard.activate('register');
       }
 
     }, 'json');

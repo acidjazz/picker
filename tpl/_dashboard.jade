@@ -1,0 +1,10 @@
+.dashboard.closed
+  .step.iregister(data-cta='register',class = settings.registered ? 'on' : '')
+    .icon: img(src='/img/planeicon.png')
+    .copy: span.hint--left(data-hint='Enter for a chance at a flight.') Register
+  .step.ilike(data-cta='like',class = settings.liked ? 'on' : '')
+    .icon: img(src='/img/likeicon.png')
+    .copy: span.hint--left(data-hint='Like us for an extra sweepstakes entry.') Like
+  .step.ishare(data-cta='share',class = settings.shared ? 'on' : '')
+    .icon: img(src='/img/shareicon.png')
+    .copy: span.hint--left(data-hint='Share us for an extra sweepstakes entry.') Share

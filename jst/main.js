@@ -1,5 +1,8 @@
 var _ = {
 
+  uid: false,
+  settings: {},
+
   i: function() {
 
     console.log('initiated');
@@ -7,6 +10,10 @@ var _ = {
     game.load(function(response) {
       _.handlers();
       rotate.i();
+      dashboard.i();
+      if (_.settings.justliked == true) {
+        dashboard.activate('like');
+      }
       $('.loader').hide();
       $('.body').show();
     });
@@ -41,6 +48,15 @@ var _ = {
 
   share: function() {
 
+    if (register.registered == false && _.settings.registered == false) {
+      _.n.i('Please register before you share so we know who you are!', false, function() {
+        $('.bubbles').addClass('hidden');
+        register.i();
+        return true;
+      });
+      return true;
+    }
+
     FB.ui({
       method: 'feed',
       link: 'https://www.facebook.com/pages/Draftfcb-labs/487462011308540?sk=app_467666166644037',
@@ -48,8 +64,16 @@ var _ = {
       name: 'SF or Auckland?',
       caption: ' ',
       description: 'Play City Picker now or enter to win 2 free tickets to Auckland, NZ from SFO.'
-    },
-      function (response) {
+    }, function (response) {
+
+        console.log(response);
+
+      if (response && response.post_id) {
+        dashboard.activate('share');
+        $.get('/index/share', {uid: _.uid, post_id: response.post_id}, function(response) {
+
+        });
+      }
 
     });
 

@@ -95,16 +95,77 @@ class index_ctl {
   ];
 
   public function index() {
+
+    $settings = [
+      'liked' => false,
+      'justliked' => false,
+      'shared' => false,
+      'registered' => false
+    ];
+
+    $fb = new fb();
+
+    if ($fb->added()) {
+
+      $user = new user(user::findOne(['id' => $fb->uid()]));
+
+      if ($user->exists() && $user->tandc == true) {
+        $settings['registered'] = true;
+      }
+
+      if ($user->exists() && $user->shared != null) {
+        $settings['shared'] = true;
+      }
+
+      if ($fb->liked() && $user->liked != null) {
+        $settings['liked'] = true;
+      }
+
+      if ($fb->liked() && $user->liked == null) {
+        $settings['liked'] = true;
+      }
+      if ($user->exists() && $fb->liked() && $user->liked == null) {
+        $settings['justliked'] = true;
+        $user->liked = new MongoDate();
+        unset($user->unliked);
+        $user->save();
+      }
+
+      if (!$fb->liked() && $user->liked != null) {
+        $user->unliked = time();
+        unset($user->linked);
+        $user->save();
+      }
+
+    }
+
+    $uid = $fb->added() ? '"'.$fb->uid().'"' : false;
+
     jade::c('index', [
       'admin' => $this->admin, 'imageJSON' => json_encode(array_keys($this->images)), 
-      'images' => array_keys($this->images), 'states' => $this->states, 'imageCopyJSON' => json_encode($this->images)]
+      'images' => array_keys($this->images), 'states' => $this->states, 'imageCopyJSON' => json_encode($this->images),
+      'settings' => $settings, 'settingsJSON' => json_encode($settings), 'uid' => $uid]
     ); 
+
   }
 
   public function images() {
 
-    jade::c('images', ['images' => $this->images]
-    ); 
+    jade::c('images', ['images' => $this->images]); 
+
+  }
+
+  public function share() {
+
+    if (!isset($_REQUEST['uid']) || !isset($_REQUEST['post_id'])) {
+      echo json_encode(['error' => true, 'status' => 'error uid or post_id']);
+      return true;
+    }
+
+    $user = user::i(user::findOne(['id' => $_REQUEST['uid']]));
+    $user->shared = new MongoDate();
+    $user->share_post_id = $_REQUEST['post_id'];
+    $user->save();
 
   }
 
