@@ -23,10 +23,10 @@ class index_ctl {
     ],
     'eyeball' => [
       'correct' => 'Street art is part of San Francisco. The same is true for New Zealand. The creative and open friendly nature blends harmoniously in the world of arts and entertainment. Check out some of the urban districts of Auckland, and see what local artists are creating. Book now and check it out for yourself.',
-      'wrong' => 'Auckland does have a lot of street art, but not this one. But there\'s a unique spirit in the work of New Zealand artists. Check out some of the urban districts of Auckland, and see what local artists are creating. Book now and check it out for yourself.'
+      'wrong' => 'Auckland does have a lot of street art murals, but not this one. There\'s a unique spirit in the work of New Zealand artists. Check out some of the urban districts of Auckland, and see what local artists are creating. Book now and view it for yourself.'
     ],
     'houses' => [
-      'correct' => 'San Francisco is known for its colorful architecture. But maybe it\'s time to discover some of Auckland\'s design gems, speckling a similar topographic landscape. Book your flight today and see for yourself.',
+      'correct' => 'San Francisco is known for its colorful architecture, but maybe it\'s time to discover some of Auckland\'s design gems. Book your flight today and see for yourself.',
       'wrong' => 'You thought this was Auckland? Close. It’s San Francisco. But perhaps you need a New Zealand vacation to make sure this sort of mix-up never happens again? That’s what we thought.'
     ],
 
@@ -62,7 +62,7 @@ class index_ctl {
     ],
     'wineladies' => [
       'correct' => 'You know your vines. Kumeu Wine Country, west of Auckland City, was established by early European settlers more than 70 years ago. Today, these wineries produce award-winning Chardonnay, Merlot, Cabernet Sauvignon and Pinot Gris. Book your flight now and get sipping.',
-      'wrong' => 'More of a beer person? There are more than 25 wineries and vineyards on Waiheke, a large island that’s only 30 minutes by ferry from the city of Auckland. Waiheke’s climate is generally warmer than the mainland, with less humidity and rain and more sunshine hours. And Cabernets are the island’s speciality. Lucky you. Book your flight now and get sipping.'
+      'wrong' => 'More of a beer person? There are more than 25 wineries and vineyards on Waiheke, a large island that’s only 30 minutes by ferry from the city of Auckland. And Cabernets are the island’s speciality. Lucky you. Book your flight now and get sipping.'
     ],
     'boatwoman' => [
       'correct' => 'The Auckland Bay offers respite from the city, with unforgettable views. Take a 10-minute ferry to historic Devonport and return in time for dinner at Auckland’s Viaduct restaurant precinct. Set sail on a New Zealand adventure today.',
@@ -91,6 +91,14 @@ class index_ctl {
     'womeneating' => [
       'correct' => 'Auckland’s Viaduct restaurant precinct offers incredible dining options. Grab a west-facing table to watch a dramatic southern hemisphere sunset. Book your flight to Auckland today.  We’ll save you a seat.',
       'wrong' => 'Guess you didn’t know about Auckland’s Viaduct restaurant precinct. There are so many restaurants, it’s hard to choose a place to watch the stunning southern hemisphere sunset.  Book your flight to Auckland today. We’ll save you a seat.'
+    ],
+    'shoppers' => [
+      'correct' => 'This designer shopping near Vulcan Lane is an Auckland favorite. With local flare and popular boutiques this is where you can add some New Zealand style to your closet. Book a trip now … but you might need an extra suitcase.',
+      'wrong' => 'Designer shopping? This Auckland district, near Vulcan Lane, is where stylish New Zealanders shop for local favorites. Book a trip now … but maybe bring an extra suitcase?'
+    ],
+    'surfer' => [
+      'correct' => 'Auckland is one of only a few places in New Zealand that offers two coasts to surf, so no matter the weather, there’s probably a place to catch a wave. Book now and get ready to hang ten.',
+      'wrong' => 'Your answer was a wipeout. Good to know that Auckland offers two coasts to surf, so no matter the weather, there’s probably a place to catch a wave. Book now and get ready to hang ten.'
     ]
   ];
 

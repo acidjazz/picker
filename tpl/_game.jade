@@ -2,14 +2,13 @@
 .circle
 
   .chooser
-    .noselect.choose(data-choice='nz') Auckland
-    .noselect.choose(data-choice='sf') San Francisco
+    .noselect.choose.cnz(data-choice='nz') Auckland
+    .noselect.choose.csf(data-choice='sf') San Francisco
 
   .correct
     .title correct!
-    .copy That's what it feels like to nail it.  You already know that Auckland's got some awesome beaches. 
-      | Like Muriawai, 60 kilometers of rugged black sand surf coast.  Shred the natural in real life with a trip to
-      | Auckland on Air New Zealand.
+    .copy Let's play a game. Tell us if a the photo is of Auckland or San Francisco and we'll teach you a thing or two about these two great cities. Careful, they look a lot alike.  
+    
     .cta.next next image
 
   .wrong
@@ -23,12 +22,13 @@
     .title thanks for playing!
     .copyA Your Kiwi IQ score is
     .score 16 / 20
-    .copyB You DO know a thing or two about New Zealand.  But there's more to learn
-      | Take in more wine, food, arts, and landscape on your very own trip.
+    .copyB.winner You DO know a thing or two about New Zealand, but there's more to learn. Take in more wine, food, arts, and landscape on your very own trip.
+    .copyB.loser You didn't do that well. So what! That means it's time to take a trip to Auckland to brush up on some delightful Kiwi culture.
 
     .ctas
       .cta.share(data-cta='share') share your score
-      .cta.back(data-cta='back') back
+      .cta.more(data-cta='more') play more
       .cta.reg(data-cta='register') enter for a chance to win
+      .clear
 
 

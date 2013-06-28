@@ -76,7 +76,7 @@ var _ = {
       picture: 'https://picker.256.sh/img/share.jpeg',
       name: 'SF or Auckland?',
       caption: ' ',
-      description: 'Play City Picker now or enter to win 2 free tickets to Auckland, NZ from SFO.'
+      description: 'Play our Kiwi IQ Game for your chance to win 2 tickets from SFO to Auckland, New Zealand.'
     }, function (response) {
 
       console.log(response);

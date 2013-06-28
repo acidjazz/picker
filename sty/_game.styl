@@ -18,12 +18,14 @@
     .choose
       cursor pointer
       display inline-block
-      border 2px solid white
       background-color rgba(black, 0.65)
       font-size 1.5em
-      margin 450px 20px
       padding 10px 20px
       buttonbg()
+      &.cnz
+        margin 50px 80px 0 0
+      &.csf
+        margin 50px 0 0 80px
   .correct, .wrong, .finished
     transform rotateY(180deg)
     &.on
@@ -49,7 +51,7 @@
       cursor pointer
       font-size 2.5em
       margin 50px 0 0 0
-      //buttontext();
+      buttontext();
   .finished
     background-color rgba(black, 0.65)
     > .title
@@ -65,18 +67,23 @@
       apex()
       font-size 0.8em
       padding 10px 50px
+      &.winner, &.loser
+        display none
     > .ctas
       width 510px
       margin auto
       text-align center
-      margin 10px 0 0 60px
+      margin 10px 0 0 43px
       font-size 1.4em
       > .cta
         cursor pointer
         width 162px
         float left
         buttontext();
-        &.back
+        &.share
+          margin 12px 0 0 0
+        &.more
           font-size 1.4em
-          margin 100px 0 0 0
-          width 60px
+          margin 100px 0 0 -40px
+          width 141px
+          //animation tada 2s ease-out 2s

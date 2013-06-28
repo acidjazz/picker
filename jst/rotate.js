@@ -1,25 +1,24 @@
 var rotate = {
 
   delay: 10,
-  images: ['beachhouses.jpeg', 'citycouple.jpeg', 'paddleboard.jpeg', 'skyfloor.jpeg', 'trainstation.jpeg', 'wineladies.jpeg'],
+  images: ['boatwoman', 'beachgroup', 'citycouple', 'oceanwoman', 'paddleboard', 'skyfloor', 'trainstation', 'wineladies'],
   interval: false,
-  number: 1,
+  number: 0,
 
   i: function() {
 
-    $('.image1').addClass('show');
+    $('.iname_' + rotate.images[0]).addClass('show');
     rotate.interval = setInterval(rotate.rotate, rotate.delay*1000);
 
   },
 
   rotate: function() {
 
-    if (++rotate.number > 5) {
+    if (++rotate.number > 7) {
       rotate.number = 1;
-    }
-
+    } 
     $('.image').removeClass('show');
-    $('.image' + rotate.number).addClass('show');
+    $('.iname_' + rotate.images[rotate.number]).addClass('show');
 
   },
 

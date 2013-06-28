@@ -1,7 +1,7 @@
 var game = {
 
   cround: 0,
-  rounds: 5,
+  rounds: 1,
   score: 0,
 
   queue: [],
@@ -79,9 +79,15 @@ var game = {
 
     switch (task) {
 
-      case 'back' :
-        game.d();
-        setTimeout(function() { $('.bubbles').removeClass('hidden'); }, 500);
+      case 'more' :
+        if (_.settings.liked) {
+          game.d();
+          game.i();
+          break;
+        } else {
+          _.n.i('Please like the page to play more');
+        }
+        //setTimeout(function() { $('.bubbles').removeClass('hidden'); }, 500);
         break;
 
       case 'register' :
@@ -90,7 +96,7 @@ var game = {
         break;
 
       case 'share' :
-        _.share();
+        game.share();
         break;
 
       default :
@@ -102,6 +108,10 @@ var game = {
   },
 
   next: function() {
+
+    if ($(this).data('cta') == 'more') {
+      return true;
+    }
 
     $('.circle .correct, .circle .wrong').removeClass('on');
     game.round();
@@ -141,9 +151,8 @@ var game = {
     $('.image').removeClass('show');
     $('.image.iname_' + game.queue[game.cround]).addClass('show');
 
-
-
     $('.circle').show();
+
     setTimeout(function() {
       $('.chooser').addClass('on');
       $('.correct .copy').html(game.imageCopy[game.queue[game.cround]].correct);
@@ -156,7 +165,16 @@ var game = {
 
     $('.circle .correct, .circle .wrong').removeClass('on');
     $('.finished').addClass('on');
+
     $('.finished .score').html(game.score + ' / ' + game.rounds);
+    $('.finished .copyB.loser').hide();
+    $('.finished .copyB.winner').hide();
+
+    if (game.score < game.rounds/2) {
+      $('.finished .copyB.loser').show();
+    } else {
+      $('.finished .copyB.winner').show();
+    }
 
   },
 
@@ -181,9 +199,31 @@ var game = {
 
   },
 
+  share: function() {
+
+    FB.ui({
+      method: 'feed',
+      link: _.FB_URL,
+      picture: 'https://picker.256.sh/img/share.jpeg',
+      name: 'SF or Auckland?',
+      caption: ' ',
+      description: 'Play Air New Zealand\'s Kiwi IQ now or enter for a chance to win two free tickets to Auckland, New Zealand from SFO.'
+    }, function (response) {
+
+      /*
+      if (response && response.post_id) {
+        dashboard.activate('share');
+        $.get('/index/share', {uid: _.uid, post_id: response.post_id}, function(response) { }); }
+      */
+
+    });
+
+  },
+
   d: function() {
 
-    game.cround = game.score = 0;
+    game.cround = 0;
+    game.score = 0;
     game.queue = [];
 
     $('.circle .chooser').removeClass('on');

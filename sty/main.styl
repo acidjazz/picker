@@ -4,10 +4,10 @@
 @import _fonts
 @import 'nib'
 @import _header
+@import _dashboard
 @import _register
 @import _notice
 @import _game
-@import _dashboard
 
 body,html
   margin 0
@@ -17,6 +17,9 @@ body,html
   color #fff
   background-color #000
   position relative
+  width 810px
+  height 986px
+  overflow hidden
 
 .clear
   clearfix()
@@ -43,7 +46,8 @@ body,html
     apex()
   .dots
     width 600px
-    height 40px
+    height 20px
+    overflow hidden
     margin auto
     .dot
       display inline-block
@@ -76,6 +80,7 @@ body,html
       font-size 3em
     .copy3
       padding 10px 0 0 0
+      line-height: 1.2em
   .bubbles.hidden
     transform scale(0)
     transition all 0.2s
@@ -113,10 +118,12 @@ body,html
         > .smaller
           apex()
           font-size 0.5em
+          line-height 1.3em
 
 .footer
   .booknow
-    text-align right
+    apex()
+    float right
     padding 25px 20px 20px 0
     a
       color white
@@ -126,10 +133,10 @@ body,html
     font-size 1.2em
     line-height 1.3em
   .copy2
-    text-align right
+    text-align left
     apex()
-    padding 0 20px 0 0
-    font-size 0.6em
+    padding 30px 0 0 20px
+    font-size 0.8em
     line-height 1em
 
 .images
