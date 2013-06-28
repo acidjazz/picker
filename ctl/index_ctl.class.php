@@ -105,6 +105,10 @@ class index_ctl {
 
     $fb = new fb();
 
+    if ($fb->liked()) {
+      $settings['liked'] = true;
+    }
+
     if ($fb->added()) {
 
       $user = new user(user::findOne(['id' => $fb->uid()]));
@@ -117,13 +121,6 @@ class index_ctl {
         $settings['shared'] = true;
       }
 
-      if ($fb->liked() && $user->liked != null) {
-        $settings['liked'] = true;
-      }
-
-      if ($fb->liked() && $user->liked == null) {
-        $settings['liked'] = true;
-      }
       if ($user->exists() && $fb->liked() && $user->liked == null) {
         $settings['justliked'] = true;
         $user->liked = new MongoDate();
@@ -132,8 +129,8 @@ class index_ctl {
       }
 
       if (!$fb->liked() && $user->liked != null) {
-        $user->unliked = time();
-        unset($user->linked);
+        $user->unliked = new MongoDate();
+        unset($user->liked);
         $user->save();
       }
 
@@ -187,7 +184,13 @@ class index_ctl {
     foreach ($form as $key=>$value) {
       $user->$key = $value;
     }
+
     $user->facebook = $facebook;
+
+    if (isset($_REQUEST['liked']) && $_REQUEST['liked'] == 'true') {
+      $user->liked = 'already';
+    }
+
     $user->save();
 
     echo json_encode(['success' => true, 'status' => 'registration successful']);

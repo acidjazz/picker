@@ -4,17 +4,17 @@
   top 100px
   right 0px
   z-index 20
-  transform matrix(1, 0, 0, 1, 90, 0)
+  transform matrix(1, 0, 0, 1, 100, 0)
   transition 0.5s ease
   &.closed
-    transform matrix(1, 0, 0, 1, 150, 0)
+    transform matrix(1, 0, 0, 1, 161, 0)
     transition 0.5s ease
   &:hover, &.open
     transform matrix(1, 0, 0, 1, 0, 0)
     transition 0.5s ease
   .step
     cursor pointer
-    width 130px
+    width 140px
     height 40px
     padding 10px
     background-color rgba(black, 0.65)
@@ -22,18 +22,23 @@
       animation tada 2s ease-out 0.2s
     &.on
       color white
-      background-color rgba(blue1, 0.65)
-      box-shadow 0px 0px 10px 0px rgba(blue1, 0.65)
+      background-color rgba(blue1, 0.85)
+      box-shadow 0px 0px 30px 0px rgba(blue1, 0.5)
       transition 2s ease
     &:hover
       text-shadow 0px 0px 10px rgba(blue1, 1)
     &.iregister
       border-radius 10px 0 0 0
+      border-top 1px solid white
+      border-left 1px solid white
       border-bottom 1px solid white
     &.ilike
       border-bottom 1px solid white
+      border-left 1px solid white
     &.ishare
       border-radius 0 0 0 10px
+      border-bottom 1px solid white
+      border-left 1px solid white
     .icon
       float left
       width 40px
@@ -42,6 +47,8 @@
       line-height 40px
       apex()
       margin 0 0 0 60px
+      .posth
+        display none
 
 @keyframes bounce
   0%

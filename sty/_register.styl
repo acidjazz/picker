@@ -6,12 +6,17 @@
   width 790px
   opacity 1
   z-index 25
-  transition opacity 0.5s
+  transform-style preserve-3d
+  backface-visibility hidden
+  transition all 1.0s ease
   &.hidden
     height 1px
     padding 0
     opacity 0
     transition opacity 0.5s ease-in-out 0.5s
+  &.off
+    transform rotateY(180deg)
+    transition all 1.0s ease
   background-color rgba(black, 0.9)
   padding 50px 0 100px 0
   overflow hidden
@@ -88,18 +93,25 @@
   width 790px
   opacity 1
   z-index 10
-  transition opacity 0.5s
+  transition all 1.0s ease
+  transform-style preserve-3d
+  backface-visibility hidden
   background-color rgba(black, 0.9)
   text-align center
   padding 100px 0
+  transform rotateY(180deg)
+  &.on
+    transform rotateY(0deg)
+    transition all 1.0s ease
   > .title
     font-size 3em
   > .arrow
-    width 100px
-    height 100px
-    background-color white
-    border-radius 50%
+    width 86px
+    height 86px
+    transform matrix(1, 0, 0, 1, 0, 0)
     margin 20px auto
+    background url(/img/arrow.png)
+    animation arrow 1s ease-in 4s both
   > .copy
     apex()
     font-size 1.2em
@@ -109,4 +121,9 @@
   > .share
     font-size 2em
     cursor pointer
+
+
+@keyframes arrow
+  to
+    transform matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2)
 

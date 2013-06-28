@@ -35,7 +35,7 @@ var register = {
           if (presponse) {
             register.data();
           } else {
-            _.n.i('Please allow access as part of the reigstration process', true, register.data);
+            _.n.i('Required for security reasons.  Your informatino will never be shared', true, register.data);
           }
 
         });
@@ -111,26 +111,27 @@ var register = {
     };
 
     if (form.tandc == false) {
-      _.n.i('You must accept the Terms and Conditions');
+      _.n.i('Please accept our Terms and Conditions');
       return false;
     }
 
     if (form.email == '') {
-      _.n.i('You must provide a valid email address');
+      _.n.i('Please provide a valid email address');
       return false;
     }
     if (form.country == '') {
-      _.n.i('You must specify a country');
+      _.n.i('Please provide your country');
       return false;
     }
     if (form.state == '') {
-      _.n.i('You must provide a state');
+      _.n.i('Please provide your state');
       return false;
     }
 
     var json = {
       form: JSON.stringify(form),
-      user: JSON.stringify(register.user)
+      user: JSON.stringify(register.user),
+      liked: _.settings.liked
     }
 
     $.get('/index/register', json, function(response) {
@@ -164,8 +165,13 @@ var register = {
 
   post: {
     i: function() {
-      register.d();
+
       $('.post').show();
+
+      setTimeout(function() {
+        $('.register').addClass('off');
+        $('.post').addClass('on');
+      }, 200);
 
       setTimeout(function() { register.post.handlers(); }, 500);
     },
@@ -186,6 +192,7 @@ var register = {
       $('.post').unbind('click', register.inside);
       $('.post').hide();
       $('.bubbles').removeClass('hidden');
+      register.d();
 
     }
 

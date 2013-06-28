@@ -32,13 +32,17 @@ var _ = {
     switch (action) {
 
       case 'register' :
-        $('.bubbles').addClass('hidden');
+        _.body.d();
+        register.i();
+        break;
+
+      case 'like' :
+        _.body.d();
         register.i();
         break;
 
       case 'play' :
-        $('.bubbles').addClass('hidden');
-        //setTimeout(game.i, 500);
+        _.body.d();
         game.i();
         break;
 
@@ -46,11 +50,20 @@ var _ = {
 
   },
 
+  body: {
+    i: function() {
+      $('.bubbles').removeClass('hidden');
+    },
+    d: function() {
+      $('.bubbles').addClass('hidden');
+    }
+  },
+
   share: function() {
 
     if (register.registered == false && _.settings.registered == false) {
-      _.n.i('Please register before you share so we know who you are!', false, function() {
-        $('.bubbles').addClass('hidden');
+      _.n.i('We want to know you.  Please register before sharing', false, function() {
+        _.body.d();
         register.i();
         return true;
       });
@@ -59,14 +72,14 @@ var _ = {
 
     FB.ui({
       method: 'feed',
-      link: 'https://www.facebook.com/pages/Draftfcb-labs/487462011308540?sk=app_467666166644037',
-      picture: 'https://picker.256.sh/img/share.jpg',
+      link: _.FB_URL,
+      picture: 'https://picker.256.sh/img/share.jpeg',
       name: 'SF or Auckland?',
       caption: ' ',
       description: 'Play City Picker now or enter to win 2 free tickets to Auckland, NZ from SFO.'
     }, function (response) {
 
-        console.log(response);
+      console.log(response);
 
       if (response && response.post_id) {
         dashboard.activate('share');

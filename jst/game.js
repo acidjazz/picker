@@ -29,8 +29,11 @@ var game = {
 
         var percentage = loaded*100/len;
         var width = percentage*596/100;
-        
-        $('.loader .progress .inner').css({width: width + 'px'});
+        var dots = Math.round(percentage*15/100);
+
+        for (var i = 1; i != dots+1; i++) {
+          $('.loader .dot_' + i).addClass('filled');
+        }
 
         if (loaded == len) {
           setTimeout(complete, 200);
@@ -183,6 +186,7 @@ var game = {
     game.cround = game.score = 0;
     game.queue = [];
 
+    $('.circle .chooser').removeClass('on');
     $('.chooser .choose').unbind('click', game.choose);
     $('.circle .cta').unbind('click', game.next);
     $('.circle .ctas .cta').unbind('click', game.cta);
