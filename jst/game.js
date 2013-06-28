@@ -1,7 +1,7 @@
 var game = {
 
   cround: 0,
-  rounds: 1,
+  rounds: 5,
   score: 0,
 
   queue: [],
