@@ -2,7 +2,7 @@
 
 class hook_ctl {
 
-  private $masks = ['204.232.175.64/27','p192.30.252.0/22'];
+  private $masks = ['204.232.175.64/27','192.30.252.0/22'];
 
   public function cidr ($ip, $cidr) {
     list ($net, $mask) = explode("/", $cidr);
@@ -22,11 +22,13 @@ class hook_ctl {
     }
 
     foreach ($this->masks as $mask) {
+
       if ($this->cidr($remoteIp, $mask)) {
         `git pull origin master`;
         error_log('ip in mask, fireing');
         return true;
       }
+
     }
 
     error_log('ip not in mask:' . $remoteIp);
