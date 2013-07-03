@@ -16,7 +16,7 @@ class hook_ctl {
     }
 
     if (in_array($remoteIp, $this->_ips)) {
-      `git pull origin master`;
+      error_log(`git pull origin master`);
     } else {
       header('HTTP/1.1 404 Not Found');
       return false;
