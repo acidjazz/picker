@@ -2,9 +2,15 @@
 
 class hook_ctl {
 
-  private $_ips = array('207.97.227.253', '50.57.128.197', '108.171.174.178');
+  private $masks = ['204.232.175.64/27','p192.30.252.0/22'];
+
+  public function cidr ($ip, $cidr) {
+    list ($net, $mask) = explode("/", $cidr);
+    return ( ip2long ($ip) & ~((1 << (32 - $mask)) - 1) ) == ip2long ($net); 
+  }
 
   public function __construct() {
+
     /* support for ec2 load balancers */
     if (
         isset($_SERVER['HTTP_X_FORWARDED_FOR']) && 
@@ -15,12 +21,15 @@ class hook_ctl {
       $remoteIp = $_SERVER['REMOTE_ADDR'];
     }
 
-    if (in_array($remoteIp, $this->_ips)) {
-      error_log(`git pull origin master`);
-    } else {
-      header('HTTP/1.1 404 Not Found');
-      return false;
+    foreach ($this->masks as $mask) {
+      if ($this->cidr($remoteIp, $mask)) {
+        `git pull origin master`;
+        return true;
+      }
     }
+
+    header('HTTP/1.1 404 Not Found');
+    return false;
 
   }
 
