@@ -24,10 +24,12 @@ class hook_ctl {
     foreach ($this->masks as $mask) {
       if ($this->cidr($remoteIp, $mask)) {
         `git pull origin master`;
+        error_log('ip in mask, fireing');
         return true;
       }
     }
 
+    error_log('ip not in mask:' . $remoteIp);
     header('HTTP/1.1 404 Not Found');
     return false;
 
