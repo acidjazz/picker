@@ -22,7 +22,10 @@ var _ = {
 
   handlers: function() {
     $('.bubble').click(_.bubble);
-    $('.checkbox').click(function() { $(this).toggleClass('checked'); });
+    $('.checkbox').click(function() { 
+      $(this).toggleClass('checked'); 
+      _.t('Sweeps', 'Uncheck');
+    });
   },
 
   bubble: function() {
@@ -76,12 +79,11 @@ var _ = {
       picture: 'https://picker.256.sh/img/share.jpeg',
       name: 'SF or Auckland?',
       caption: ' ',
-      description: 'Play our Kiwi IQ Game for your chance to win 2 tickets from SFO to Auckland, New Zealand.'
+      description: 'Enter for your chance to win 2 tickets from SFO to Auckland, New Zealand.'
     }, function (response) {
 
-      console.log(response);
-
       if (response && response.post_id) {
+        _.t('Facebook','Share');
         dashboard.activate('share');
         $.get('/index/share', {uid: _.uid, post_id: response.post_id}, function(response) {
 
@@ -124,6 +126,10 @@ var _ = {
 
     }
 
-  }
+  },
+
+  t: function(type, label) {
+    _gaq.push(['_trackEvent', type, 'Click', label]);
+  },
 
 }

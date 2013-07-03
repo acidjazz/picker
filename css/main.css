@@ -39,8 +39,8 @@
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
   background-size: 100%;
-  width: 97px;
-  height: 52px;
+  width: 113px;
+  height: 60px;
   margin: 0 0 0 10px;
 }
 .dashboard {
@@ -865,6 +865,9 @@
 .register > .form .option {
   padding: 10px 0 0 0;
 }
+.register > .form .option.emailoption {
+  padding: 27px 0 0 0;
+}
 .register > .form .checkbox {
   cursor: pointer;
   width: 20px;
@@ -902,6 +905,12 @@
   font-size: 0.9em;
   margin: 0 0 0 40px;
 }
+.register > .form .copy.agree {
+  padding: 5px 0 0 0;
+}
+.register > .form .copy.agree a {
+  color: #fff;
+}
 .register > .left {
   float: left;
   width: 395px;
@@ -927,7 +936,7 @@
 .register > .submit {
   float: right;
   font-size: 3em;
-  margin: -50px 120px 0 20px;
+  margin: 20px 10px 0 20px;
   padding: 0 20px;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
@@ -988,8 +997,11 @@
   font-size: 3em;
 }
 .post > .arrow {
-  width: 86px;
-  height: 86px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  width: 70px;
+  height: 70px;
   -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
   -moz-transform: matrix(1, 0, 0, 1, 0, 0);
   -o-transform: matrix(1, 0, 0, 1, 0, 0);
@@ -997,11 +1009,11 @@
   transform: matrix(1, 0, 0, 1, 0, 0);
   margin: 20px auto;
   background: url("/img/arrow.png");
-  -webkit-animation: arrow 1s ease-in 4s both;
-  -moz-animation: arrow 1s ease-in 4s both;
-  -o-animation: arrow 1s ease-in 4s both;
-  -ms-animation: arrow 1s ease-in 4s both;
-  animation: arrow 1s ease-in 4s both;
+  -webkit-animation: arrow 6s ease-in 0s both;
+  -moz-animation: arrow 6s ease-in 0s both;
+  -o-animation: arrow 6s ease-in 0s both;
+  -ms-animation: arrow 6s ease-in 0s both;
+  animation: arrow 6s ease-in 0s both;
 }
 .post > .copy {
   font-family: ApexNewBook;
@@ -1015,48 +1027,323 @@
   cursor: pointer;
 }
 @-moz-keyframes arrow {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+
+  20% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+    -moz-transform: matrix(1, 0, 0, 1, 0, 0);
+    -o-transform: matrix(1, 0, 0, 1, 0, 0);
+    -ms-transform: matrix(1, 0, 0, 1, 0, 0);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+
+  50% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+    -moz-transform: matrix(1, 0, 0, 1, 0, 0);
+    -o-transform: matrix(1, 0, 0, 1, 0, 0);
+    -ms-transform: matrix(1, 0, 0, 1, 0, 0);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+
+  60% {
+    -webkit-transform: matrix(1, 0, 0, 1, 350, 0);
+    -moz-transform: matrix(1, 0, 0, 1, 350, 0);
+    -o-transform: matrix(1, 0, 0, 1, 350, 0);
+    -ms-transform: matrix(1, 0, 0, 1, 350, 0);
+    transform: matrix(1, 0, 0, 1, 350, 0);
+  }
+
+  70% {
+    -webkit-transform: matrix(0, -1, 1, 0, 350, 0);
+    -moz-transform: matrix(0, -1, 1, 0, 350, 0);
+    -o-transform: matrix(0, -1, 1, 0, 350, 0);
+    -ms-transform: matrix(0, -1, 1, 0, 350, 0);
+    transform: matrix(0, -1, 1, 0, 350, 0);
+  }
+
+  80% {
+    -webkit-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -moz-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -o-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -ms-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+  }
+
   100% {
-    -webkit-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    -moz-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    -o-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    -ms-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
+    -webkit-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -moz-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -o-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -ms-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   }
 }
 @-webkit-keyframes arrow {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+
+  20% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+    -moz-transform: matrix(1, 0, 0, 1, 0, 0);
+    -o-transform: matrix(1, 0, 0, 1, 0, 0);
+    -ms-transform: matrix(1, 0, 0, 1, 0, 0);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+
+  50% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+    -moz-transform: matrix(1, 0, 0, 1, 0, 0);
+    -o-transform: matrix(1, 0, 0, 1, 0, 0);
+    -ms-transform: matrix(1, 0, 0, 1, 0, 0);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+
+  60% {
+    -webkit-transform: matrix(1, 0, 0, 1, 350, 0);
+    -moz-transform: matrix(1, 0, 0, 1, 350, 0);
+    -o-transform: matrix(1, 0, 0, 1, 350, 0);
+    -ms-transform: matrix(1, 0, 0, 1, 350, 0);
+    transform: matrix(1, 0, 0, 1, 350, 0);
+  }
+
+  70% {
+    -webkit-transform: matrix(0, -1, 1, 0, 350, 0);
+    -moz-transform: matrix(0, -1, 1, 0, 350, 0);
+    -o-transform: matrix(0, -1, 1, 0, 350, 0);
+    -ms-transform: matrix(0, -1, 1, 0, 350, 0);
+    transform: matrix(0, -1, 1, 0, 350, 0);
+  }
+
+  80% {
+    -webkit-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -moz-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -o-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -ms-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+  }
+
   100% {
-    -webkit-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    -moz-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    -o-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    -ms-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
+    -webkit-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -moz-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -o-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -ms-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   }
 }
 @-o-keyframes arrow {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+
+  20% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+    -moz-transform: matrix(1, 0, 0, 1, 0, 0);
+    -o-transform: matrix(1, 0, 0, 1, 0, 0);
+    -ms-transform: matrix(1, 0, 0, 1, 0, 0);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+
+  50% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+    -moz-transform: matrix(1, 0, 0, 1, 0, 0);
+    -o-transform: matrix(1, 0, 0, 1, 0, 0);
+    -ms-transform: matrix(1, 0, 0, 1, 0, 0);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+
+  60% {
+    -webkit-transform: matrix(1, 0, 0, 1, 350, 0);
+    -moz-transform: matrix(1, 0, 0, 1, 350, 0);
+    -o-transform: matrix(1, 0, 0, 1, 350, 0);
+    -ms-transform: matrix(1, 0, 0, 1, 350, 0);
+    transform: matrix(1, 0, 0, 1, 350, 0);
+  }
+
+  70% {
+    -webkit-transform: matrix(0, -1, 1, 0, 350, 0);
+    -moz-transform: matrix(0, -1, 1, 0, 350, 0);
+    -o-transform: matrix(0, -1, 1, 0, 350, 0);
+    -ms-transform: matrix(0, -1, 1, 0, 350, 0);
+    transform: matrix(0, -1, 1, 0, 350, 0);
+  }
+
+  80% {
+    -webkit-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -moz-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -o-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -ms-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+  }
+
   100% {
-    -webkit-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    -moz-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    -o-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    -ms-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
+    -webkit-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -moz-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -o-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -ms-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   }
 }
 @-ms-keyframes arrow {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+
+  20% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+    -moz-transform: matrix(1, 0, 0, 1, 0, 0);
+    -o-transform: matrix(1, 0, 0, 1, 0, 0);
+    -ms-transform: matrix(1, 0, 0, 1, 0, 0);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+
+  50% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+    -moz-transform: matrix(1, 0, 0, 1, 0, 0);
+    -o-transform: matrix(1, 0, 0, 1, 0, 0);
+    -ms-transform: matrix(1, 0, 0, 1, 0, 0);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+
+  60% {
+    -webkit-transform: matrix(1, 0, 0, 1, 350, 0);
+    -moz-transform: matrix(1, 0, 0, 1, 350, 0);
+    -o-transform: matrix(1, 0, 0, 1, 350, 0);
+    -ms-transform: matrix(1, 0, 0, 1, 350, 0);
+    transform: matrix(1, 0, 0, 1, 350, 0);
+  }
+
+  70% {
+    -webkit-transform: matrix(0, -1, 1, 0, 350, 0);
+    -moz-transform: matrix(0, -1, 1, 0, 350, 0);
+    -o-transform: matrix(0, -1, 1, 0, 350, 0);
+    -ms-transform: matrix(0, -1, 1, 0, 350, 0);
+    transform: matrix(0, -1, 1, 0, 350, 0);
+  }
+
+  80% {
+    -webkit-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -moz-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -o-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -ms-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+  }
+
   100% {
-    -webkit-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    -moz-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    -o-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    -ms-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
+    -webkit-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -moz-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -o-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -ms-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   }
 }
 @keyframes arrow {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  }
+
+  20% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+    -moz-transform: matrix(1, 0, 0, 1, 0, 0);
+    -o-transform: matrix(1, 0, 0, 1, 0, 0);
+    -ms-transform: matrix(1, 0, 0, 1, 0, 0);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+
+  50% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+    -moz-transform: matrix(1, 0, 0, 1, 0, 0);
+    -o-transform: matrix(1, 0, 0, 1, 0, 0);
+    -ms-transform: matrix(1, 0, 0, 1, 0, 0);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+
+  60% {
+    -webkit-transform: matrix(1, 0, 0, 1, 350, 0);
+    -moz-transform: matrix(1, 0, 0, 1, 350, 0);
+    -o-transform: matrix(1, 0, 0, 1, 350, 0);
+    -ms-transform: matrix(1, 0, 0, 1, 350, 0);
+    transform: matrix(1, 0, 0, 1, 350, 0);
+  }
+
+  70% {
+    -webkit-transform: matrix(0, -1, 1, 0, 350, 0);
+    -moz-transform: matrix(0, -1, 1, 0, 350, 0);
+    -o-transform: matrix(0, -1, 1, 0, 350, 0);
+    -ms-transform: matrix(0, -1, 1, 0, 350, 0);
+    transform: matrix(0, -1, 1, 0, 350, 0);
+  }
+
+  80% {
+    -webkit-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -moz-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -o-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -ms-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+  }
+
   100% {
-    -webkit-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    -moz-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    -o-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    -ms-transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
-    transform: matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2);
+    -webkit-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -moz-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -o-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    -ms-transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    transform: matrix(0, -1, 1, 0, 350, -550) scale(2);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   }
 }
 .notice {
@@ -1386,7 +1673,7 @@ html {
 }
 .loader .dots {
   width: 600px;
-  height: 20px;
+  height: 25px;
   overflow: hidden;
   margin: auto;
 }
@@ -1537,6 +1824,9 @@ html {
   padding: 30px 0 0 20px;
   font-size: 0.8em;
   line-height: 1em;
+}
+.footer .copy2 a {
+  color: #fff;
 }
 .images {
   position: absolute;

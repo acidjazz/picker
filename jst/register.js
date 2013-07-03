@@ -7,6 +7,7 @@ var register = {
 
   i: function() {
 
+    _.t('Sweeps','EnterNow');
     $('.register').removeClass('hidden');
     setTimeout(function() { 
       register.handlers();
@@ -80,7 +81,7 @@ var register = {
       first: $('.input_first input'),
       last: $('.input_last input'),
       email: $('.input_email input'),
-      country: $('.input_country input'),
+      //country: $('.input_country input'),
       state: $('.input_state input')
     };
 
@@ -100,13 +101,15 @@ var register = {
 
   submit: function() {
 
+      _.t('Sweeps', 'Submit');
+
     var form = {
       tandc: $('.checkbox_tandc').hasClass('checked'),
       signup: $('.checkbox_signup').hasClass('checked'),
       first_name: $('.input_first input').val(),
       last_name: $('.input_last input').val(),
       email: $('.input_email input').val(),
-      country: $('.input_country input').val(),
+      //country: $('.input_country input').val(),
       state: $('.input_state input').val()
     };
 
@@ -119,10 +122,12 @@ var register = {
       _.n.i('Please provide a valid email address');
       return false;
     }
+    /*
     if (form.country == '') {
       _.n.i('Please provide your country');
       return false;
     }
+    */
     if (form.state == '') {
       _.n.i('Please provide your state');
       return false;

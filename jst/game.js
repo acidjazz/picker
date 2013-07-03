@@ -1,3 +1,4 @@
+
 var game = {
 
   cround: 0,
@@ -8,6 +9,8 @@ var game = {
   images: [],
 
   i: function() {
+
+    _.t('Game','PlayNow');
 
     rotate.d();
     game.handlers();
@@ -55,6 +58,8 @@ var game = {
   choose: function() {
 
     var choice = $(this).data('choice');
+
+    _.t('Game','Auckland');
 
     $('.circle .chooser').removeClass('on');
 
@@ -108,6 +113,8 @@ var game = {
   },
 
   next: function() {
+
+    _.t('Game','NextImage');
 
     if ($(this).data('cta') == 'more') {
       return true;
@@ -163,6 +170,8 @@ var game = {
 
   finish: function() {
 
+    _.t('Game','Finish');
+
     $('.circle .correct, .circle .wrong').removeClass('on');
     $('.finished').addClass('on');
 
@@ -201,13 +210,15 @@ var game = {
 
   share: function() {
 
+    _.t('Game','ShareScore');
+
     FB.ui({
       method: 'feed',
       link: _.FB_URL,
       picture: 'https://picker.256.sh/img/share.jpeg',
       name: 'SF or Auckland?',
       caption: ' ',
-      description: 'Play Air New Zealand\'s Kiwi IQ now or enter for a chance to win two free tickets to Auckland, New Zealand from SFO.'
+      description: 'Enter for your chance to win 2 tickets from SFO to Auckland, New Zealand.'
     }, function (response) {
 
       /*
@@ -215,6 +226,9 @@ var game = {
         dashboard.activate('share');
         $.get('/index/share', {uid: _.uid, post_id: response.post_id}, function(response) { }); }
       */
+      if (response && response.post_id) {
+        _.t('Facebook','Share');
+      }
 
     });
 

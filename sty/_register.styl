@@ -37,6 +37,8 @@
       width 395px
     .option
       padding 10px 0 0 0
+      &.emailoption
+        padding 27px 0 0 0
     .checkbox
       cursor pointer
       width 20px
@@ -60,6 +62,10 @@
       apex()
       font-size 0.9em
       margin 0 0 0 40px
+      &.agree
+        padding 5px 0 0 0
+        a
+          color white
   > .left
       float left
       width 395px
@@ -81,7 +87,7 @@
     > .submit
       float right
       font-size 3em
-      margin -50px 120px 0 20px
+      margin 20px 10px 0 20px
       padding 0 20px
       transition color 0.2s
       cursor pointer
@@ -109,12 +115,13 @@
   > .title
     font-size 3em
   > .arrow
-    width 86px
-    height 86px
+    opacity 0
+    width 70px
+    height 70px
     transform matrix(1, 0, 0, 1, 0, 0)
     margin 20px auto
     background url(/img/arrow.png)
-    animation arrow 1s ease-in 4s both
+    animation arrow 6s ease-in 0s both
   > .copy
     apex()
     font-size 1.2em
@@ -125,8 +132,21 @@
     font-size 2em
     cursor pointer
 
-
 @keyframes arrow
-  to
-    transform matrix(0.93, 0.34, -0.34, 0.93, 350, -520) scale(2)
-
+  0%
+    opacity 0
+  20%
+    opacity 0
+    transform matrix(1, 0, 0, 1, 0, 0)
+  50%
+    opacity 1
+    transform matrix(1, 0, 0, 1, 0, 0)
+  60%
+    transform matrix(1, 0, 0, 1, 350, 0)
+  70%
+    transform matrix(0, -1, 1, 0, 350, 0)
+  80%
+    transform matrix(0, -1, 1, 0, 350, -550) scale(2)
+  100%
+    transform matrix(0, -1, 1, 0, 350, -550) scale(2)
+    opacity 0

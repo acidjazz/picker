@@ -7,14 +7,15 @@
     .right
       .option
         .label TERMS AND CONDITIONS
-        .copy Terms and Conditions
+        .copy.agree I agree to the 
+          a(href='http://www.google.com', target='_new') Terms and Conditions.
         .checkbox.checkbox_tandc
       .clear
       .option
         .label SIGN ME UP
         .copy To receive the latest news and special e-mail<br /> offers from Air New Zealand.
         .checkbox.checkbox_signup.checked
-      .option
+      .option.emailoption
         .label EMAIL
         .input.input_email
           input(type='text')
@@ -32,7 +33,7 @@
         .label STATE
         .input.input_state
           input(type='text')
-      .option
+      //.option
         .label COUNTRY
         .input.input_country
           input(type='text')

@@ -22,7 +22,7 @@ class index_ctl {
       'wrong' => 'It looks like Auckland doesn\'t it? (It\'s not.) Auckland has a wonderful collection of natural lookouts, many of which are volcanic cones. From the summit of Mt. Eden, the highest in the city, you\'ll get a magnificent view of Auckland. Book a flight now and see them for yourself.'
     ],
     'eyeball' => [
-      'correct' => 'Street art is part of San Francisco. The same is true for New Zealand. The creative and open friendly nature blends harmoniously in the world of arts and entertainment. Check out some of the urban districts of Auckland, and see what local artists are creating. Book now and check it out for yourself.',
+      'correct' => 'Street art is part of San Francisco. The same is true for New Zealand.  Check out some of Auckland’s urban art districts and see what local artists are creating. Book now and view it for yourself.',
       'wrong' => 'Auckland does have a lot of street art murals, but not this one. There\'s a unique spirit in the work of New Zealand artists. Check out some of the urban districts of Auckland, and see what local artists are creating. Book now and view it for yourself.'
     ],
     'houses' => [
@@ -66,7 +66,7 @@ class index_ctl {
     ],
     'boatwoman' => [
       'correct' => 'The Auckland Bay offers respite from the city, with unforgettable views. Take a 10-minute ferry to historic Devonport and return in time for dinner at Auckland’s Viaduct restaurant precinct. Set sail on a New Zealand adventure today.',
-      'wrong' => 'Looks like your game is a bit rocky. But on the waters of the Auckland Bay, it’s smooth sailing. Commuter ferries and evening harbor cruises from downtown Auckland make it easy to experience the romance of the beautiful city sunset from out on the water. Set sail on a New Zealand adventure today.'
+      'wrong' => 'Looks like your game is a bit rocky. But on the waters off Auckland, it’s smooth sailing. Commuter ferries and evening harbor cruises from downtown Auckland make it easy to experience the beautiful sunset from out on the water. Set sail on a New Zealand adventure today.'
     ],
     'oceanwoman' => [
       'correct' => 'Auckland is home to some of New Zealand’s best beaches. Just 40 minutes from downtown Auckland, long black-sand beaches face the setting sun, almost uninhabited and continuously swept by long ocean swells from the Tasman Sea. Book a flight now and see for yourself!',
