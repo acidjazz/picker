@@ -113,8 +113,15 @@ class index_ctl {
 
     $fb = new fb();
 
+    if ($fb->liked() && isset($_COOKIE['liked']) && $_COOKIE['liked'] == 'no') {
+      $settings['justliked'] = true;
+    }
+
     if ($fb->liked()) {
       $settings['liked'] = true;
+      setcookie('liked', 'yes');
+    } else {
+      setcookie('liked', 'no');
     }
 
     if ($fb->added()) {
@@ -130,7 +137,6 @@ class index_ctl {
       }
 
       if ($user->exists() && $fb->liked() && $user->liked == null) {
-        $settings['justliked'] = true;
         $user->liked = new MongoDate();
         unset($user->unliked);
         $user->save();

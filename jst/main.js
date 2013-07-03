@@ -2,18 +2,32 @@ var _ = {
 
   uid: false,
   settings: {},
+  ieNine: false,
 
   i: function() {
 
-    console.log('initiated');
+    if (/msie 9/.test(navigator.userAgent.toLowerCase())) {
+      _.ieNine = true;
+    }
 
     game.load(function(response) {
       _.handlers();
       rotate.i();
       dashboard.i();
+
       if (_.settings.justliked == true) {
+
         dashboard.activate('like');
+
+        if (_.ieNine == false && $.cookie('in_game') != undefined) {
+          _.body.d();
+          game.i();
+        }
+
       }
+
+      $.removeCookie('in_game');
+
       $('.loader').hide();
       $('.body').show();
     });
@@ -45,8 +59,12 @@ var _ = {
         break;
 
       case 'play' :
-        _.body.d();
-        game.i();
+        if (_.ieNine) {
+          _.n.i('Apologies but the game does not support IE9 and earlier, please upgrade or install Firefox, Chrome, or Safari');
+        } else {
+          _.body.d();
+          game.i();
+        }
         break;
 
     }

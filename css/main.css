@@ -1372,7 +1372,7 @@
   font-family: ApexNewBook;
   font-size: 1.2em;
   text-align: center;
-  padding: 40px 0;
+  padding: 40px;
 }
 .notice .cta {
   cursor: pointer;
@@ -1567,6 +1567,7 @@
   transition: color 0.2s;
 }
 .circle .finished {
+  display: none;
   background-color: rgba(0,0,0,0.65);
 }
 .circle .finished > .title {
@@ -1674,7 +1675,6 @@ html {
 .loader .dots {
   width: 600px;
   height: 25px;
-  overflow: hidden;
   margin: auto;
 }
 .loader .dots .dot {

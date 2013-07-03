@@ -7,6 +7,8 @@ var register = {
 
   i: function() {
 
+    $.removeCookie('in_game');
+
     _.t('Sweeps','EnterNow');
     $('.register').removeClass('hidden');
     setTimeout(function() { 
@@ -51,6 +53,7 @@ var register = {
     me: function (callback) {
 
       FB.api('/me', function(response) {
+
         if (response.error) {
           callback(false);
         } else {
@@ -63,6 +66,7 @@ var register = {
     perms: function(callback) {
 
       FB.login(function(response) {
+
 
         if (response.authResponse) {
           callback(true);
@@ -177,6 +181,10 @@ var register = {
         $('.register').addClass('off');
         $('.post').addClass('on');
       }, 200);
+
+      /* need to do this if IE9
+      $('.register').hide();
+      */
 
       setTimeout(function() { register.post.handlers(); }, 500);
     },

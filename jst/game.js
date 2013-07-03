@@ -6,6 +6,7 @@ var game = {
   score: 0,
 
   queue: [],
+  played: [],
   images: [],
 
   i: function() {
@@ -15,6 +16,10 @@ var game = {
     rotate.d();
     game.handlers();
     game.round();
+    $.cookie('in_game', true);
+    if (_.settings.justliked != true) {
+      $.removeCookie('played');
+    }
 
   },
 
@@ -105,7 +110,6 @@ var game = {
         break;
 
       default :
-        console.log(task);
         break;
 
     }
@@ -127,7 +131,16 @@ var game = {
 
   answer: function(choice) {
 
-    var answer = game.images.indexOf(game.queue[game.cround]);
+    var answer = game.images.indexOf(game.queue[game.cround-1]);
+
+    game.played.push(game.queue[game.cround-1]);
+
+    if ($.cookie('played') == undefined) {
+      $.cookie('played', JSON.stringify(game.played));
+    } else {
+      var played = eval($.cookie('played'));
+      $.cookie('played', JSON.stringify(game.unique(game.played.concat(played))));
+    }
 
     if (choice == 'sf' && answer < 8) {
       return true;
@@ -156,14 +169,14 @@ var game = {
     game.cround++;
 
     $('.image').removeClass('show');
-    $('.image.iname_' + game.queue[game.cround]).addClass('show');
+    $('.image.iname_' + game.queue[game.cround-1]).addClass('show');
 
     $('.circle').show();
 
     setTimeout(function() {
       $('.chooser').addClass('on');
-      $('.correct .copy').html(game.imageCopy[game.queue[game.cround]].correct);
-      $('.wrong .copy').html(game.imageCopy[game.queue[game.cround]].wrong);
+      $('.correct .copy').html(game.imageCopy[game.queue[game.cround-1]].correct);
+      $('.wrong .copy').html(game.imageCopy[game.queue[game.cround-1]].wrong);
     }, 500);
 
   },
@@ -190,8 +203,26 @@ var game = {
   pick: function() {
 
     game.queue = [];
+    var rounds = [];
+
+    // free the images back up if there arent enough to queue up
+    if (game.images.length-game.played.length < game.rounds) {
+      game.played = [];
+    }
+
     var clone = game.images.slice(0);
-    return game.randomize(clone).slice(0, game.rounds+1);
+    clone = game.randomize(clone).slice(0, game.rounds+1);
+
+    for (var i in clone) {
+      if (game.played.indexOf(clone[i]) == -1) {
+        rounds.push(clone[i]);
+      }
+
+      if (rounds.length == game.rounds) {
+        return rounds;
+      }
+
+    }
 
   },
 
@@ -205,6 +236,26 @@ var game = {
     }
 
     return array;
+
+  },
+
+
+  unique: function(array){
+
+    var u = {}, a = [];
+
+    for(var i = 0, l = array.length; i < l; ++i){
+
+      if(u.hasOwnProperty(array[i])) {
+        continue;
+      }
+
+      a.push(array[i]);
+      u[array[i]] = 1;
+
+    }
+
+    return a;
 
   },
 
@@ -240,11 +291,15 @@ var game = {
     game.score = 0;
     game.queue = [];
 
+    $.removeCookie('in_game');
+
+    $('.circle .correct, .circle .wrong').removeClass('on');
     $('.circle .chooser').removeClass('on');
     $('.chooser .choose').unbind('click', game.choose);
     $('.circle .cta').unbind('click', game.next);
     $('.circle .ctas .cta').unbind('click', game.cta);
     $('.circle .finished').removeClass('on');
+    $('.circle').hide();
 
   }
 

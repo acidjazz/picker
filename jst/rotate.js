@@ -25,7 +25,6 @@ var rotate = {
   d: function() {
 
     clearInterval(rotate.interval);
-    console.log('rotater interval cleared');
 
   }
 
