@@ -38,7 +38,7 @@ var register = {
           if (presponse) {
             register.data();
           } else {
-            _.n.i('Required for security reasons.  Your information will never be shared', true, register.data);
+            _.n.i('Required for security reasons.  Your information will never be shared.', true, register.data);
           }
 
         });

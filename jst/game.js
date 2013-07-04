@@ -95,7 +95,7 @@ var game = {
           game.i();
           break;
         } else {
-          _.n.i('Please like the page to play more');
+          _.n.i('Please like the page to play more.');
         }
         //setTimeout(function() { $('.bubbles').removeClass('hidden'); }, 500);
         break;
