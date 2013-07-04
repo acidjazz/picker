@@ -10,8 +10,8 @@ define('KDEBUG_HANDLER', true);
 define('KDEBUG_EGPCS', true);
 
 /* facebook */
-define('FB_APPID', '467666166644037');
-define('FB_SECRET', '02ce4a528ddb5490cbcfeb298d93b309');
+define('FB_APPID', '172663776244077');
+define('FB_SECRET', '0adcebeec145640c3cb97009ae0f8edb');
 define('FB_URL', 'https://www.facebook.com/pages/Draftfcb-labs/487462011308540?sk=app_' . FB_APPID);
 
 /* mongo config */

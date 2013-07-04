@@ -16,6 +16,7 @@ var _ = {
       dashboard.i();
 
       if (_.settings.justliked == true) {
+        _.t('Facebook', 'Like');
 
         dashboard.activate('like');
 
