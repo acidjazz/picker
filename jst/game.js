@@ -158,7 +158,6 @@ var game = {
 
     if (game.queue.length < 1 || game.queue == undefined) {
       game.queue = game.pick();
-      console.log(game.queue);
       game.score = 0;
     }
     
@@ -224,7 +223,6 @@ var game = {
       }
 
     }
-    console.log(rounds);
 
   },
 
