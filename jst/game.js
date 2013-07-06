@@ -156,8 +156,9 @@ var game = {
 
   round: function() {
 
-    if (game.queue.length < 1) {
+    if (game.queue.length < 1 || game.queue == undefined) {
       game.queue = game.pick();
+      console.log(game.queue);
       game.score = 0;
     }
     
@@ -206,12 +207,12 @@ var game = {
     var rounds = [];
 
     // free the images back up if there arent enough to queue up
-    if (game.images.length-game.played.length < game.rounds) {
+    if (game.played && game.images.length-game.played.length < game.rounds) {
       game.played = [];
     }
 
     var clone = game.images.slice(0);
-    clone = game.randomize(clone).slice(0, game.rounds+1);
+    clone = game.randomize(clone);
 
     for (var i in clone) {
       if (game.played.indexOf(clone[i]) == -1) {
@@ -223,6 +224,7 @@ var game = {
       }
 
     }
+    console.log(rounds);
 
   },
 
