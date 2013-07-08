@@ -38,8 +38,12 @@ var _ = {
   handlers: function() {
     $('.bubble').click(_.bubble);
     $('.checkbox').click(function() { 
+
+      if ($(this).hasClass('checkbox_signup') && $(this).hasClass('checked')) {
+        _.t('Sweeps', 'Uncheck');
+      }
+
       $(this).toggleClass('checked'); 
-      _.t('Sweeps', 'Uncheck');
     });
   },
 
