@@ -10,8 +10,8 @@ class index_ctl {
 
     // these are sf
     'coffee' => [
-      'correct' => 'You got this flat right. In New Zealand they call this a "flat white." With hundreds of coffee shops around Auckland, there\'s plenty of buzz to fuel ,your adventure. Order yours the right way. Book your flight today.',
-      'wrong' => 'Nope, that isn\'t Auckland. It\'s San Francisco. But Kiwis are passionate about coffee too. Order a "flat white" at one of the many coffee shops around the city. Book your flight today.'
+      'correct' => 'You got this flat right. In New Zealand they call this a "flat white." With hundreds of coffee shops around Auckland, there\'s plenty of buzz to fuel your adventure. Order yours the right way. Book your flight today.',
+      'wrong' => 'Nope, that isn\'t Auckland. It\'s San Francisco. But Kiwis are passionate about coffee, too. Order a "flat white" at one of the many coffee shops around the city. Book your flight today.'
     ],
     'beachcrowd' => [
       'correct' => 'You knew this was one of California\'s finest. But did you know that Auckland\'s lifestyle is consistently ranked among the best in the world? The city\'s marine environment is its key attraction. And getting there is easy with daily flights from SFO.',
@@ -19,7 +19,7 @@ class index_ctl {
     ],
     'doghill' => [
       'correct' => 'This pooch helped you sniff out the correct answer. This is the San Francisco Bay Area. Several of Auckland\'s headlands have been set aside as public parks, giving everyone access to the amazing views. See for yourself, and book a flight today. Flying daily from SFO to Auckland.',
-      'wrong' => 'It looks like Auckland doesn\'t it? (It\'s not.) Auckland has a wonderful collection of natural lookouts, many of which are volcanic cones. From the summit of Mt. Eden, the highest in the city, you\'ll get a magnificent view of Auckland. Book a flight now and see them for yourself.'
+      'wrong' => 'It looks like Auckland, doesn\'t it? (It\'s not.) Auckland has a wonderful collection of natural lookouts, many of which are volcanic cones. From the summit of Mt. Eden, the highest in the city, you\'ll get a magnificent view of Auckland. Book a flight now and see them for yourself.'
     ],
     'eyeball' => [
       'correct' => 'Street art is part of San Francisco. The same is true for New Zealand.  Check out some of Auckland\'s urban art districts and see what local artists are creating. Book now and view it for yourself.',
@@ -31,7 +31,7 @@ class index_ctl {
     ],
 
     'road' => [
-      'correct' => 'Yes, this is a windy road near San Francisco. But it looks like it could be Auckland, New Zealand..except they drive on the other side. Test drive Auckland for yourself, and book your flight today.',
+      'correct' => 'Yes, this is a windy road near San Francisco. But it looks like it could be Auckland, New Zealand..except they drive on the other side of the road. Test drive Auckland for yourself, and book your flight today.',
       'wrong' => 'Nope. This road and view isn\'t Auckland, New Zealand. But it could be. Except they drive on the other side of the road. This is a game, and it\'s hard. Ease the pain with a vacation and book yourself a trip to Auckland.'
     ],
     'parkwoman' => [
@@ -40,7 +40,7 @@ class index_ctl {
     ],
     'beachhouses' => [
       'correct' => 'Those hypnotizing colors are of the San Francisco Bay. But Auckland\'s Bay is equally stunning, offering views of epic southern hemisphere sunsets and beaches everywhere. Book your flight today.',
-      'wrong' => 'That\'s not Auckland. But maybe you need to go check out the New Zealand city a little closer, so you can get this answer right next time. Sound good? Yeah. It does. Book your flight today.'
+      'wrong' => 'That\'s not Auckland. But maybe you need to go check out the New Zealand city a little closer so you can get this answer right next time. Sound good? Yeah. It does. Book your flight today.'
     ],
 
     // these are new zealand
@@ -98,7 +98,7 @@ class index_ctl {
     ],
     'surfer' => [
       'correct' => 'Auckland is one of only a few places in New Zealand that offers two coasts to surf. So no matter the weather, there\'s probably a place to catch a wave. Book now and get ready to hang ten.',
-      'wrong' => 'Your answer was a wipeout. Good to know that Auckland offers two coasts to surf- so no matter the weather, there\'s probably a place to catch a wave. Book now and get ready to hang ten.'
+      'wrong' => 'Your answer was a wipeout. Good to know that Auckland offers two coasts to surf, so no matter the weather, there\'s probably a place to catch a wave. Book now and get ready to hang ten.'
     ]
   ];
 
