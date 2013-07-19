@@ -143,7 +143,7 @@ var _ = {
 
       $('.notice').removeClass('on');
       $('.notice .cta').unbind('click', _.n.d);
-      $('.container').unbind('click',_.n.d);
+      $('.register').unbind('click',_.n.d);
       $('.fade').removeClass('on');
 
       if (_.n.callback) {
