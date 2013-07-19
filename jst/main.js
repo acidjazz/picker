@@ -112,6 +112,7 @@ var _ = {
 
         });
       }
+      register.post.d();
 
     });
 
@@ -133,6 +134,7 @@ var _ = {
 
       $('.notice').addClass('on');
       $('.notice .cta').click(_.n.d);
+      $('.register').click(_.n.d);
       $('.notice .copy').html(copy);
 
     },
@@ -141,6 +143,7 @@ var _ = {
 
       $('.notice').removeClass('on');
       $('.notice .cta').unbind('click', _.n.d);
+      $('.container').unbind('click',_.n.d);
       $('.fade').removeClass('on');
 
       if (_.n.callback) {
