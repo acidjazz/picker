@@ -84,10 +84,11 @@ class index_ctl {
       'correct' => 'She\'s jumping for joy, and with good reason. Auckland boasts some of New Zealand\'s finest beaches. Don\'t take our word for it, fly there now and find out for yourself.',
       'wrong' => 'She\'s jumping. But not because you were right. Sorry. Auckland boasts some of New Zealand\'s finest beaches. Don\'t take our word for it, fly there now and find out for yourself.'
     ],
+    /*
     'outlawsbar' => [
       'correct' => 'The only thing “outlawed” here is not having a good time. With fine dining, dancing, and nightlife that will keep you up all night, Auckland knows how to get down. Learn more for yourself by booking your flight today.',
       'wrong' => 'Nope. That\'s Auckland. And the only thing “outlawed” here is not having a good time. With fine dining, dancing, and nightlife that will keep you up all night, New Zealand knows how to get down. Learn more for yourself by booking your flight today.'
-    ],
+    ],*/
     'womeneating' => [
       'correct' => 'Auckland\'s Viaduct restaurant precinct offers incredible dining options. Grab a west-facing table to watch a dramatic southern hemisphere sunset. Book your flight to Auckland today.  We\'ll save you a seat.',
       'wrong' => 'Guess you didn\'t know about Auckland\'s Viaduct restaurant precinct. There are so many restaurants, it\'s hard to choose a place to watch the stunning southern hemisphere sunset.  Book your flight to Auckland today. We\'ll save you a seat.'
