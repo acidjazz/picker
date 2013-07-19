@@ -5,7 +5,7 @@ define('LIB_PATHS', G_PATH.'klib/,'.G_PATH.'mdl/,'.G_PATH.'ctl/,'.G_PATH.'lib/')
 define('G_URL', 'https://picker.256.sh/');
 
 /* kdebug */
-define('KDEBUG', true);
+define('KDEBUG', false);
 define('KDEBUG_HANDLER', true);
 define('KDEBUG_EGPCS', true);
 
