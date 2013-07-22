@@ -94,7 +94,7 @@ class index_ctl {
       'wrong' => 'Guess you didn\'t know about Auckland\'s Viaduct restaurant precinct. There are so many restaurants, it\'s hard to choose a place to watch the stunning southern hemisphere sunset.  Book your flight to Auckland today. We\'ll save you a seat.'
     ],
     'shoppers' => [
-      'correct' => 'This designer shopping near Vulcan Lane is an Auckland favorite. With local flare and popular boutiques, this is where you can add some New Zealand style to your closet. Book a trip now … but you might need an extra suitcase.',
+      'correct' => 'This designer shopping near Vulcan Lane is an Auckland favorite. With local flair and popular boutiques, this is where you can add some New Zealand style to your closet. Book a trip now … but you might need an extra suitcase.',
       'wrong' => 'Designer shopping? This Auckland district, near Vulcan Lane, is where stylish New Zealanders shop for local favorites. Book a trip now … but maybe bring an extra suitcase?'
     ],
     'surfer' => [
