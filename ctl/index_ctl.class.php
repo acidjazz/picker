@@ -57,7 +57,7 @@ class index_ctl {
       'wrong' => 'Wrong answer. But check out that view. It\'s SKYCITY\'s see-through floor, a totally different view of the Auckland skyline. Book a flight now and grab an eye-full.'
     ],
     'trainstation' => [
-      'correect' => 'All aboard! Travel by train and see all that Auckland has to offer. And if you fly Air New Zealand, you\'ll travel like the Kiwis do. In style.',
+      'correct' => 'All aboard! Travel by train and see all that Auckland has to offer. And if you fly Air New Zealand, you\'ll travel like the Kiwis do. In style.',
       'wrong' => 'Your answer chugged to a stop. No problem. Travel by train and see all that Auckland has to offer. And if you fly Air New Zealand, you\'ll travel like the Kiwis do. In style.'
     ],
     'wineladies' => [

@@ -894,6 +894,14 @@
   transition: all 0.2s;
   border: 2px solid rgba(255,255,255,0.65);
 }
+.register > .form .checkbox.checked div {
+  background-color: #fff;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin: 2px 0 0 2px;
+  width: 16px;
+  height: 16px;
+}
 .register > .form .label {
   font-family: ApexNewMedium;
   font-size: 1em;
