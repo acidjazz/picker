@@ -222,4 +222,11 @@ class index_ctl {
 
   }
 
+  public function mobile() {
+
+    jade::c('mobile.jade');
+
+
+  }
+
 }
