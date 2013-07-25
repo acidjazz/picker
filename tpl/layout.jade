@@ -5,6 +5,11 @@ html
     title Air New Zealand Kiwi IQ
     meta(charset='utf-8')
 
+    script
+      if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
+        location.href = '#{_c.G_URL}mobile';
+      }
+
     link(id='css', rel='stylesheet',href='css/main.css',type='text/css',media='all')
     link(id='css', rel='stylesheet',href='css/hint.css',type='text/css',media='all')
 
