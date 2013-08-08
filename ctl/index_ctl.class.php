@@ -38,10 +38,12 @@ class index_ctl {
       'correct' => 'This nature is one of Golden Gate Park\'s many walks. In New Zealand, you can experience nine Great Walks that take you through diverse and spectacular scenery. Book a flight today and find a hike that\'s just your type.',
       'wrong' => 'But don\'t worry. It looks like New Zealand because there are many walks just like this, right around Auckland. In fact, there are nine Great Walks that take you through diverse and spectacular scenery. Book a flight today and find a hike that\'s just your type.'
     ],
+    /*
     'beachhouses' => [
       'correct' => 'Those hypnotizing colors are of the San Francisco Bay. But Auckland\'s Bay is equally stunning, offering views of epic southern hemisphere sunsets and beaches everywhere. Book your flight today.',
       'wrong' => 'That\'s not Auckland. But maybe you need to go check out the New Zealand city a little closer so you can get this answer right next time. Sound good? Yeah. It does. Book your flight today.'
     ],
+    */
 
     // these are new zealand
     'citycouple' => [
