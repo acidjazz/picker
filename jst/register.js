@@ -152,6 +152,7 @@ var register = {
         _.uid = register.user.id;
         register.post.i();
         dashboard.activate('register');
+        _.t('Sweeps', 'Success');
       }
 
     }, 'json');
