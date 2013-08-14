@@ -1680,6 +1680,7 @@ html {
   font-family: ApexNewBook;
 }
 .loader .dots {
+  overflow: hidden;
   width: 600px;
   height: 25px;
   margin: auto;
